@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>My Registration Form</title>
+  </head>
+  <body>
+    <h1>My Registration Form</h1>
+    <form>
+      <table>
+        <tr><th></th><th></th></tr>
+        <tr>
+          <td width=100px>First Name: </td>
+          <td><input type="text" name="firstName"></td>
+        </tr>
+        <tr>
+          <td>Last Name: </td>
+          <td><input type="text" name="lastName"></td>
+        </tr>
+        <tr>
+          <td>Email: </td>
+          <td><input type="text" name="email"></td>
+        </tr>
+        <tr>
+          <td>Password: </td>
+          <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+          <td>PW Confirm: </td>
+          <td><input type="password" name="PWConfirm"></td>
+        </tr>
+        <tr>
+          <td>Birthday: </td>
+          <td><input type="date" name="birthday"></td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td width=75px><input type="radio" name="gender" value="male">Male</td>
+          <td width=75px><input type="radio" name="gender" value="female">Female</td>
+          <td width=75px><input type="radio" name="gender" value="other">Other</td>
+        </tr>
+      </table>
+      A short description about yourself:
+      <br><textarea rows="4" cols="40"></textarea>
+      <br>Favorite Language:
+      <select name="favoriteLanguage">
+        <option value="JavaScript">JavaScript</option>
+        <option value="Python">Python</option>
+        <option value="HTML">HTML</option>
+        <option value="CSS">CSS</option>
+      </select>
+      <br><input type="submit">
+    </form>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+mkdir test
+touch index.html
+touch styles.css
+touch commands.txt
+cp index.html index_2.html
+rm styles.css
+cd ..
+mkdir destination
+mv index_2.html ../destination/index_2.html
+ls
+cd ../destination
+ls
+cd ..
+rm -rf destination
+
+
+
+
+Interesting Commands
+
+ls -l
+ls -lh
+sudo ___
+open ___
+clear
+reset
+
+[command-a]; [command-b] —> run command a, and then command b	
+command-a && command-b —> run command b IF command a succeeded
