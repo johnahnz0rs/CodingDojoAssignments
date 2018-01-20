@@ -1,0 +1,169 @@
+body {
+	padding: 0px;
+	margin: auto;
+	font-family: arial, helvetica, sans-serif;
+	background-color: #265174;
+	width: 970px;
+}
+
+#header {
+	margin: 20px 0px;
+	}
+	#header img {
+		display: inline-block;
+		width: 300px;
+		height: auto;
+		margin-right: 400px;
+		vertical-align: middle;
+	}
+	#header #search {
+		display: inline-block;
+		font-size: 15px;
+		vertical-align: top;
+		color: white;
+	}
+	#header #search-text {
+		text-align: right;
+	}
+	#header a {
+		text-decoration: none;
+		color: yellow;
+	}
+	#header #search-bar {
+		margin-top: 10px;
+		padding-top: 10px;
+		padding-bottom: 0px;
+		width: 250px;
+		height: 40px;
+		background-color: #444444;
+		text-align: center;
+		border-radius: 10px;
+	}
+	#header #search-bar input {
+		text-align: center;
+	}
+	#header #search-bar button {
+		background-color: #265174;
+		padding-bottom: 0px;
+	}
+
+
+
+#navigation {
+	width: 870px;
+	padding: 5px 0px;
+	margin: auto;
+	background-color: #457BA9;
+	border-radius: 10px;
+	}
+	#navigation ul {
+		margin: auto;
+	}
+	#navigation ul li{
+		display: inline-block;
+		margin: 5px 23px;
+	}
+	#navigation a {
+		color: white;
+		font-size: 20px;
+		text-decoration: none;
+	}
+
+
+
+
+#main-content {
+	margin-top: 20px;
+}
+	#main-content #links{
+		vertical-align: top;
+		display: inline-block;
+		width: 200px;
+		margin-right: 40px;
+	}
+	#main-content #links ul {
+		color: yellow;
+		text-align: center;
+	}
+	#main-content #links ul li {
+		list-style-type: none;
+		margin-bottom: 10px;
+		font-size: 12px;
+	}
+	#main-content #links a {
+		color: white;
+		font-size: 16px;
+	}
+	#main-content #main-content-text {
+		display: inline-block;
+		width: 600px;
+		text-align: center;
+		color: white;
+		font-size: 15px;
+	}
+	#main-content #main-content-text ul {
+		list-style-type: none;
+	}
+	#main-content-text li {
+		color: yellow;
+		margin-bottom: 5px;
+		font-size: 20px;
+	}
+
+
+
+
+
+
+
+#sub-content {
+	background-color: white;
+	height: auto;
+	margin: auto;
+	text-align: center;
+	}
+	#sub-content div {
+		padding: 10px 20px;
+		display: inline-block;
+		width: 400px;
+		vertical-align: top;
+		font-size: 15px;
+	}
+	#sub-content .blue-bar {
+		height: 5px;
+		padding: 0px;
+		background-color: #457BA9;
+		display: inline-block;
+	}
+	#sub-content .blue-bar h4 {
+		margin: 0px;
+	}
+	#sub-content span {
+		width: 250px;
+	}
+	#sub-content a {
+		color: #457BA9;
+		text-decoration: none;
+	}
+
+
+
+
+
+
+
+#footer {
+	text-align: center;
+	color: #457BA9;
+	}
+	#footer #footer-links ul li {
+		display: inline-block;
+		margin-right: 40px;
+	}
+	#footer a {
+		color: #457BA9;
+	}
+
+
+
+
