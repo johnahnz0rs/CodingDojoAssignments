@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		"use strict;"
+
+		function randomChance(quarters) {
+			for (var i = quarters; i > 0; i--) {
+				var winning = Math.trunc(Math.random()*100) + 1;
+				var player = Math.trunc(Math.random()*100) + 1;
+				var prize = Math.trunc(Math.random()*50) +50;
+				if (player = winning) {
+					return quarters += prize - 1; 
+					// -1 in order to account for the quarter that was just used to play;
+				}
+			}
+			return 0;
+		}
+
+		console.log(randomChance(10));
+
+
+
+
+	</script>
+	<title>Random Chance</title>
+</head>
+<body>
+
+</body>
+</html>

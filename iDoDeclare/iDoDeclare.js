@@ -1,0 +1,21 @@
+var num1 = 1;
+var num2 = 2;
+var num3 = -3;
+var num4 = 1337;
+var string1 = 'hello world';
+var string2 = 'pwnz0rs';
+var string3 = 'rubber baby buggy bumper';
+var boolean1 = true;
+var boolean2 = false;
+var undefinedVariable;
+
+console.log('This is a number: ' + num1);
+console.log('This is another number: ' + num2);
+console.log('This is a negative number: ' + num3);
+console.log('johnahnz0rs is so ' + num4 + 'z0rs');
+console.log('lol --> ' + string1);
+console.log('johnahnz0rs will ' + string2 + ' j00!');
+console.log('bet you didn\'t know that i would say ' + string3);
+console.log('it is ' + boolean1 + ' that johnahnz0rs will pwnz0rs j00r box0rs');
+console.log('it is ' + boolean2 + ' that johanhzn0rs is a n00b');
+console.log(undefinedVariable + ' is not defined');

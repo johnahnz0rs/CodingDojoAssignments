@@ -1,0 +1,309 @@
+.wrapper {
+	width: 970px ;
+	padding: 0px;
+	margin: auto;
+	font-family: arial, helvetica, san-serif;
+}
+	.dark-blue {
+		color: #356F9F;
+	}
+	.light-blue {
+		color: #40CCDD;
+	}
+	.red {
+		color: red;
+	}
+	.bold {
+		font-weight: bold;
+	}
+
+
+
+/*header*/
+.wrapper div.logo {
+	display: inline-block;
+}
+	.logo img {
+		height: 80px;
+		width: auto;
+		vertical-align: middle;
+	}
+	.logo h1 {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+
+.wrapper .www { /*The World Wide Web*/
+	background-color: #356F9F;
+	color: white;
+	padding: 15px;
+	margin-top: -15px;
+}
+/*end header*/
+
+
+	/*sidebar*/
+	.sidebar {
+		display: inline-block;
+		vertical-align: top;
+		width: 250px;
+		padding: 10px 5px;
+	
+	}
+		.sidebar p {
+			margin-top: -10px;
+		}
+		.sidebar button {
+			margin: auto;
+		}
+		.sidebar .watch {
+			background-color: #356F9F;
+			margin: 0px 0px 5px 12px;
+			padding: 5px 20px;
+			width: 180px;
+			color: white;
+			font-size: 15px;
+			border-radius: 5px;
+		}
+		.sidebar .resources {
+			background-color: orange;
+			margin-left: 12px;
+			padding: 5px 20px;
+			width: 180px;
+			color: white;
+			font-size: 15px;
+			border-radius: 5px;
+		}
+		.sidebar div.line {
+			margin: 20px auto;
+			height: 2px;
+			width: 190px;
+			background-color: gray;
+		}
+		.sidebar div.ad {
+			background-image: url("./images/ad_background.png");
+			height: 300px;
+			margin: auto;
+		}
+			.ad p {
+				font-size: 25px;
+				margin-bottom: 10px;
+				padding-top: 10px;
+				color: white;
+				text-align: center;
+			}
+			.ad img {
+				width: 80px;
+				height: auto;
+				margin-left: 50px;
+			}
+			.ad button {
+				background-color: #40CCDD;
+				color: white;
+				font-size: 15px;
+				border-radius: 5px;
+				padding: 5px 20px;
+				margin: 20px 0px 0px 20px;
+			}
+	/*end sidebar*/
+
+
+
+	/*main content*/
+	.content {
+		vertical-align: top;
+		margin-left: 250px;
+		padding: 10px;
+		background-color: gray;
+		width: 690px;
+	}
+
+			.content-header .home {
+				width: 30px;
+				height: auto;
+				margin-left: 0px;
+			}
+			.content-header .phone {
+				width: 40px;
+				height: auto;
+				margin-left: 500px;
+			}
+			.content-header div.contact {
+				display: inline-block;
+				margin-left: 10px;
+				text-align: center;
+			}
+				.contact p {
+					font-size: 10px;
+				} 
+				.contact h2 {
+					background-color: none;
+					color: #40CCDD;
+					margin: -10px 0px;
+				}
+		.content div.text img {
+			width: 200px;
+			height: auto;
+			margin: auto;
+		}
+		.content div.big-3 {
+			border: 5px solid #356F9F;
+		}
+		.content .big-3 img {
+			width: 120px;
+			height: auto;
+
+		}
+			.content div.big-3-text {
+				display: inline-block;
+			}
+				.big-3-text h3 {
+					margin-bottom: -5px;
+				}
+				.big-3-text p {
+
+				}
+
+
+
+	/*end main-content*/
+
+
+
+
+
+
+
+
+
+
+
+/*
+#header {
+
+}
+	#header img {
+		width: 80px;
+		vertical-align: middle;
+	}
+	#header h1 {
+		display: inline-block;
+	}
+	#header span {
+		color: #4C7FAB;
+	}
+	h2 {
+		margin-top: -15px;
+		padding: 15px;
+		background: #4C7FAB;
+		color: white;
+		display: block;
+	}
+
+
+
+#main-content {
+	margin-top: -20px;
+}
+	#main-content #sidebar {
+		width: 200px;
+		display: inline-block;
+		margin-right: 10px;
+	}
+	#sidebar h3 span {
+		color: red;
+	}
+	#sidebar h5 span {
+		color: #4C7FAB;
+	}
+	#sidebar #watch {
+		font-size: 15px;
+		width: 180px;
+		background-color: #3C7DB4;
+		color: white;
+		padding: 10px;
+		margin-bottom: 2px;
+		border-radius: 5px;
+	}
+	#sidebar #resources {
+		font-size: 15px;
+		width: 180px;
+		background-color: #E47712;
+		color: white;
+		padding: 10px;
+		border-radius: 5px;
+	}
+	#sidebar #line {
+		width: 190px;
+		margin: 10px 0px;
+		height: 10px;
+		color: gray;
+	}
+		#sidebar #advertisement {
+		background-image: url("./images/ad_background.png");
+		height: 300px;
+		padding: 10px 10px 0px 10px;
+		text-align: center;
+		}
+		#sidebar #advertisement h3 {
+			color: white;
+			background-color: none;
+		}
+		#sidebar #advertisement img {
+			color: white;
+			width: 100px;
+			font-size: 20px;
+			border-radius: 5px;
+			margin-bottom: 10px;
+		}
+		#sidebar #learn {
+			display: block;
+			margin: auto;
+			background-color: #3ACADA;
+			text-align: center;
+		}
+
+	#main-content #main-header {
+		display: inline-block;
+		vertical-align: top;
+	}
+		#main-content #main-header img {
+			width: 15px;
+		}
+		#main-content h4 {
+			display: inline-block;
+
+		}
+		#main-content #main-header #phone {
+			width: 35px;
+			margin-left: 450px;
+		}
+		#main-content #contact {
+			display: inline-block;
+			text-align: center;
+		}
+		#main-content #contact p {
+			margin: 0px;
+			font-size: 12px;
+		}
+		#main-content #contact h3 {
+			margin: 0px;
+			color: #3ACADA;
+		}
+
+		#main-content #line {
+			background-color: black;
+			height: 2px;
+			width: 100px;
+		}
+
+
+	#main-content #main-info {
+		display: inline-block;
+		width: 200px;
+	}
+		#main-content #main-info h3 {
+			color: #4C7FAB;
+		}
+*/
