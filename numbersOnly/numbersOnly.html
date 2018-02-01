@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>numbersOnly</title>
+	<script type="text/javascript">"use strict;"</script>
+	<script>
+		function numbersOnly(arr) {
+			var returnArray = [];
+			for (var i = 0; i < arr.length; i++) {
+				if (typeof arr[i] === "number") {
+					returnArray.push(arr[i]);
+				}
+			}
+			return returnArray;
+		}
+
+
+		//console.log(numbersOnly([1,2,3,'four',5,true]));
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

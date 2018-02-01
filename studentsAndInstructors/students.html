@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>students and instructors</title>
+	<script type="text/javascript">"use strict;"</script>
+	<script>
+		//Part I
+		var students = [ 
+		    {first_name:  'Michael', last_name : 'Jordan'},
+		    {first_name : 'John', last_name : 'Rosales'},
+		    {first_name : 'Mark', last_name : 'Guillen'},
+		    {first_name : 'KB', last_name : 'Tonel'}
+		];
+
+		function outputStudents(arr) {
+			for (var i in arr) {
+				console.log(arr[i].first_name + " " + arr[i].last_name);
+			}
+		}
+
+		//outputStudents(students);
+
+
+		/* 
+		// couldn't figure this one out yet.
+		//Part II
+		var users = {
+			'Students': [ 
+			    {first_name:  'Michael', last_name : 'Jordan'},
+			    {first_name : 'John', last_name : 'Rosales'},
+			    {first_name : 'Mark', last_name : 'Guillen'},
+			    {first_name : 'KB', last_name : 'Tonel'}
+			],
+			'Instructors': [
+			    {first_name : 'Michael', last_name : 'Choi'},
+			    {first_name : 'Martin', last_name : 'Puryear'}
+			]
+		}
+
+		function outputStudentsAndInstructors(obj) {
+			var objKeys = Object.getOwnPropertyNames(obj);
+			for (var i = 0; i < objKeys.length; i++) {
+				console.log(objKeys[i]);
+					for (var a = 0; a < obj[i].length; a++) {
+						console.log((a+1) + " - " + obj[i][a].first_name.toUpperCase() + " " + obj[i][a].last_name.toUpperCase());
+					}
+			}
+		}
+
+
+		outputStudentsAndInstructors(users)
+		*/
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+* {
+	font-family: arial, helvetia, "sans serif";
+}
+
+.wrapper {
+	width: 970px;
+	margin: auto;
+	padding: 20px;
+}
+
+.red {
+	color: red;
+}
+
+	.divider {
+		background-color: black;
+		height: 5px;
+		margin: 20px;
+	}
+
+	.buttondiv {
+		display: inline-block;
+		width: 200px;
+		vertical-align: top;
+		margin-top: 80px;
+	}
+
+		.buttondiv button {
+			padding: 5px 20px;
+			margin: 0px 0px 30px 20px;
+			font-size: 15px;
+		}
+
+	.text {
+		display: inline-block;
+		width: 700px;
+		margin: auto;
+	}
+
+		.text h1 {
+			width: 300px;
+			text-align: center;
+		}
+
+		.text p {
+			font-size: 20px;
+		}
+
+		.text .shownP {
+			width: 100px;
+			background-color: blue;
+			color: white;
+			text-align: center;
+		}
+
+		.text .toggleP {
+			margin-left: 50px;
+		}
+
+		.text img {
+			width: 250px;
+		}
+
+		.text figure {
+			margin-left: 50px;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
