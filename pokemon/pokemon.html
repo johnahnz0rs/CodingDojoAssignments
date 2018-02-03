@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pokemon: gotta poke your mom</title>
+	<style>
+		* {
+			font-family: trebuchet, helvetica, "sans-serif";
+		}
+		.wrapper {
+			width: 970px;
+			margin: auto;
+		}
+		img {
+			height: 100px;
+			width: auto;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+<h1>Assignment: Pokemon</h1>
+</div>
+<script>
+	// $(document).ready(function() {
+		$(".wrapper").append(function() {
+			for (var i = 1; i <= 151; i++) {
+				//http://pokeapi.co/media/sprites/pokemon/12.png
+				var source = 'http://pokeapi.co/media/sprites/pokemon/' + i + '.png';
+				var source2 = 'http://pokeapi.co/media/img/' + i + '.png';
+				var altAttr = 'poke' + i;
+				var text = '<img alt="' + altAttr + '" src="' + source + '">';
+				if (i % 9 !== 0) {
+					$(this).append(text);
+				} else {
+					$(this).append(text);
+					$(this).append("<br>");
+				}
+			}
+		});
+	// });
+	</script>
+
+</body>
+</html>

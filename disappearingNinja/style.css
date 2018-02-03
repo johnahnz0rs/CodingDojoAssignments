@@ -1,0 +1,25 @@
+* {
+	font-family: arial, helvetica, "sans-serif";
+}
+
+.wrapper {
+	width: 970px;
+	margin: 20px auto;
+	padding: 20px;
+}
+
+img {
+	width: 180px;
+	height: 180px;
+	margin: 20px;
+}
+
+button {
+	width: 150px;
+	font-size: 20px;
+	padding: 10px;
+	margin: 20px; 
+	background-color: green;
+	color: white;
+}
+

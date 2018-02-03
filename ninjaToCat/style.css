@@ -1,0 +1,19 @@
+* {
+	font-family: trebuchet, helvetica, 'sans-serif';
+}
+
+.wrapper {
+	width: 300px;
+	margin: auto;
+	text-align: center;
+}
+
+h1 {
+	text-align: center;
+}
+
+img {
+	display: block;
+	width: 181px;
+	margin: 1px auto;
+}
