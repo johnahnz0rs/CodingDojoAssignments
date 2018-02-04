@@ -1,0 +1,41 @@
+
+* {
+	width: 970px;
+	margin: 20px auto;
+	font-family: trebuchet, helvetica, 'sans serif';
+}
+
+.wrapper {
+	background-color: lightblue;
+	padding: 20px;
+
+}
+
+.italic {
+	font-style: italic;
+	font-weight: bold;
+}
+
+.wrapper h2, p {
+	margin-bottom: 10px;
+	width: 600px;
+}
+
+.image {
+	width: 235px;
+	margin: 20px auto;
+	display: inline-block;
+	text-align: center;
+}
+
+.image p {
+	margin: auto;
+	width: 220px;
+}
+
+.image img {
+	width: 220px;
+	height: auto;
+	vertical-align: middle;
+	margin: 10px;
+}
