@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Card</title>
+	<meta charset="utf-8">
+	<meta name="description" content="contact card assignment in coding dojo webdev bootcamp.">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="./contactCard.js"></script>
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="userForm">
+			<h2>Add New Contact Cards Below:</h2>
+			<form class="userID">
+				<p>First name: <input type="text" class="name" name="firstName" required></p>
+				<p>Last name: <input type="text" class="name" name="lastName" required></p>
+				<p>Description: <br><textarea class="description" name="description" required></textarea></p>
+				<p><input type="submit" value="Submit" class="btn" placeholder="Enter description">
+			</form>
+		</div> <!-- end form -->
+		<div class="display">
+			<h2>Click the cards below to see that person's description</h2>
+		</div> <!-- end display -->
+
+
+	</div> <!-- end wrapper -->
+</body>
+</html>

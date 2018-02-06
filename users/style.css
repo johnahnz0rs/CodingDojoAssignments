@@ -1,0 +1,48 @@
+* {
+	font-family: trebuchet, helvetica, 'sans-serif';
+}
+
+.wrapper {
+	width: 970px;
+	height: 1000px;
+	margin: 20px auto;
+	padding: 20px;
+	background-color: lightblue;
+	vertical-align: middle;
+}
+
+h3 {
+	margin-top: 40px;
+}
+.users {
+	width: 95%;
+	text-align: left;
+	border: 1px solid black;
+	padding-bottom: 20px;
+	margin: auto;
+}
+
+.users th {
+	width: 25%;
+	text-align: left;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.userInfo {
+	width: 50%;
+	margin-left: 20px;
+	padding-left: 20px;
+	border: 1px solid black;
+}
+
+input {
+	width: 250px;
+}
+
+.btn {
+	width: 100px;
+	padding: 5px;
+	background-color: orange;
+	border-radius: 10px;
+}

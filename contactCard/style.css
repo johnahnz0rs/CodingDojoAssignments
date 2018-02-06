@@ -1,0 +1,75 @@
+* {
+	font-family: trebuchet, helvetica, 'sans serif';
+}
+
+.wrapper {
+	height: 1000px;
+	width: 970px;
+	margin: auto;
+	padding: 20px;
+	background-color: lightblue;
+}
+
+/*styling for the form*/
+.userForm {
+	width: 400px;
+	display: inline-block;
+	margin-right: 10px;
+	padding: 10px;
+	border: 2px solid black;
+	/*vertical-align: top;*/
+}
+	input {
+		border-radius: 5px;
+	}
+	input[type=text] {
+		width: 220px;
+		height: 20px;
+		border: none;
+		border-radius: 0px;
+		background-color: lightblue;
+		border-bottom: 2px solid black;
+
+	}
+	textarea {
+		width: 350px;
+		height: 100px;
+		background-color: lightblue;
+		border: 1px dotted black;
+		vertical-align: top;
+	}
+	input[type=submit] {
+		padding: 5px 40px;
+		font-style: bold;
+		text-decoration: underline;
+		background-color: lightgreen;
+		margin-left: 100px;
+	}
+
+
+/*styling for the display area*/
+.display {
+	width: 500px;
+	display: inline-block;
+	padding: 10px;
+	/*border: 2px solid red;*/
+	vertical-align: top;
+}
+
+	.card {
+		width: 470px;
+		height: 220px;
+		margin: 0px auto 20px 0px;
+		padding: 10px;
+		border: 1px solid black;
+		text-align: center;
+		vertical-align: middle;
+	}
+
+
+
+
+
+
+
+
