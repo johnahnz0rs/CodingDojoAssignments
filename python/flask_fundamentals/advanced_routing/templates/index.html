@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf=8">
+	<meta name="description" content="python flask form_test johnahnz0rs is l33t">
+	<style>
+		.wrapper {
+			font-family: trebuchet, helvetica, "sans serif";
+			width: 970px;
+			padding: 5px 20px;
+			margin: 20px auto;
+			background-color: lightblue;
+			color: white;
+		}
+		h1 {
+			padding: 0px;
+		}
+		h3 {
+			padding: 0px;
+		}
+		input {
+			margin: 10px;
+		}
+	</style>
+	<title>Form Test Index</title>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>Index Page</h1>
+		<h3>Create a User</h3>
+		<form action='/users' method='post'>
+			Name: <input type="text" name="name"><br>
+			Email: <input type="text" name="email">
+			<br>
+			<input type="submit" value="create user">
+		</form>
+	</div> <!-- end wrapper -->
+</body>
+</html>
