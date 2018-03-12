@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<meta name='description' content='Advanced Validation assignment, coding dojo, flask_fundamentals'>
+	<link rel='stylesheet' href='{{ url_for("static", filename="style.css") }}'>
+	<script></script>
+	<title>Advanced Validation</title>
+</head>
+
+<body>
+	<div class='wrapper'>
+		<h1>Advanced Validation Example</h1>
+		<p>Enter a Valid(Any) Email, d00d</p>
+		<p>
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+						{{ message }}
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+		</p>
+		<form action='/process', method='post'>
+			Enter j00r emailz: <input type='text' name='email'>
+			<br><input type='submit' value='Subm1t'>
+		</form>
+	</div> <!-- end wrapper -->
+</body>
+
+</html>

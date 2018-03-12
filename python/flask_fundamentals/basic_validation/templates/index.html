@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<meta name='description' content='Basic Validation assignment, coding dojo, flask_fundamentals'>
+	<link rel='stylesheet' href='{{ url_for("static", filename="style.css") }}'>
+	<script></script>
+	<title>Basic Validation Example</title>
+</head>
+
+<body>
+	<div class='wrapper'>
+		<h1>Enter a Valid(Any) Name!</h1>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+					<p>{{ message }}</p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+		<form action='/process' method='post'>
+			Name: <input type='text' name='name'>
+			<br><input type='submit' value='Submit'>
+		</form>
+	</div> <!-- end wrapper -->
+</body>
+
+</html>

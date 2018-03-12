@@ -1,0 +1,107 @@
+1. What query would you run to get the total revenue for March of 2012?
+
+select monthname(charged_datetime) as 'month', sum(amount) as 'total revenue for March 2012' from billing
+where charged_datetime between cast('2012-03-01' as date) and cast('2012-03-31' as date);
+
+
+
+
+2. What query would you run to get total revenue collected from the client with an id of 2?
+
+select client_id, sum(amount) from billing
+where client_id = 2;
+
+
+
+
+3. What query would you run to get all the sites that client=10 owns?
+
+select * from sites where client_id = 10;
+
+
+
+
+4. What query would you run to get total # of sites created per month per year for the client with an id of 1? 
+
+select client_id, count(domain_name) as number_of_websites, monthname(created_datetime), year(created_datetime) from sites
+where client_id = 1
+group by created_datetime;
+
+
+What about for client=20?
+
+select client_id, count(domain_name) as number_of_websites, monthname(created_datetime), year(created_datetime) from sites
+where client_id = 20
+group by created_datetime;
+
+
+
+
+5. What query would you run to get the total # of leads generated for each of the sites between January 1, 2011 to February 15, 2011?
+
+select site_id, count(leads_id) as number_of_leads from leads
+where registered_datetime between cast('2011-01-01' as date) and cast('2011-02-15' as date)
+group by site_id;
+
+
+
+
+6. What query would you run to get a list of client names and the total # of leads we've generated for each of our clients between January 1, 2011 to December 31, 2011?
+
+select concat_ws(' ', clients.first_name, clients.last_name) as client_name, count(leads.leads_id) as total_number_of_leads from clients
+join sites on sites.client_id = clients.client_id
+join leads on leads.site_id = sites.site_id
+where leads.registered_datetime between cast('2011-01-01' as date) and cast('2011-12-31' as date)
+group by clients.client_id;
+
+
+
+
+7. What query would you run to get a list of client names and the total # of leads we've generated for each client each month between months 1 - 6 of Year 2011?
+
+select concat_ws(' ', clients.first_name, clients.last_name) as client_name, count(leads.leads_id) as total_number_of_leads, monthname(leads.registered_datetime) as 'month', year(leads.registered_datetime) as 'year' from clients
+join sites on sites.client_id = clients.client_id
+join leads on leads.site_id = sites.site_id
+where leads.registered_datetime between cast('2011-01-01' as date) and cast('2011-06-30' as date)
+group by leads.registered_datetime
+order by clients.client_id;
+
+
+
+
+8. What query would you run to get a list of client names and the total # of leads we've generated for each of our clients' sites between January 1, 2011 to December 31, 2011? Order this query by client id.  
+
+select concat_ws(' ', clients.first_name, clients.last_name) as client_name, count(leads.leads_id) as total_leads from clients
+join sites on sites.client_id = clients.client_id
+join leads on leads.site_id = sites.site_id
+where leads.registered_datetime between cast('2011-01-01' as date) and cast('2011-12-31' as date)
+group by clients.client_id
+order by clients.client_id;
+
+Come up with a second query that shows all the clients, the site name(s), and the total number of leads generated from each site for all time.
+
+select concat_ws(' ', clients.first_name, clients.last_name) as client_name, sites.domain_name as site_name, count(leads.leads_id) as total_leads from clients
+join sites on sites.client_id = clients.client_id
+join leads on leads.site_id = sites.site_id
+group by sites.site_id
+order by clients.client_id;
+
+
+
+9. Write a single query that retrieves total revenue collected from each client for each month of the year. Order it by client id.
+
+select concat_ws(' ', clients.first_name, clients.last_name) as client_name, sum(billing.amount) as total_revenue, monthname(billing.charged_datetime) as 'month', year(billing.charged_datetime) as 'year' from clients
+join billing on billing.client_id = clients.client_id
+group by billing.charged_datetime
+order by clients.client_id;
+
+
+
+
+10. Write a single query that retrieves all the sites that each client owns. Group the results so that each row shows a new client. It will become clearer when you add a new field called 'sites' that has all the sites that the client owns. (HINT: use GROUP_CONCAT)
+
+select clients.client_id, concat_ws(' ', clients.first_name, clients.last_name) as client_name, group_concat(sites.domain_name) as 'sites' from clients
+join sites on sites.client_id = clients.client_id
+group by clients.client_id;
+
+

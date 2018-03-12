@@ -1,0 +1,36 @@
+* {
+	font-family: trebuchet, helvetica, 'sans serif';
+	background-color: lightblue;
+	color: white;
+}
+.wrapper {
+	width: 970px;
+	margin: 20px auto;
+}
+.submit {
+	margin-left: 500px;
+}
+.header {
+	text-decoration: underline;
+}
+.fail {
+	width: 400px;
+	margin: 10px auto;
+	padding: 20px;
+	border: 1px solid black;
+	background-color: red;
+}
+.success {
+	width: 400px;
+	margin: 10px auto;
+	padding: 20px;
+	background-color: lightgreen;
+	border: 1px solid black;
+	color: black;
+}
+.link {
+	text-align: center;
+}
+.all_emails {
+	margin: 20px;
+}

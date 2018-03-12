@@ -1,0 +1,18 @@
+
+.wrapper {
+	font-family: trebuchet, helvetica, "sans serif";
+	width: 970px;
+	padding: 5px 20px;
+	margin: 20px auto;
+	background-color: lightblue;
+	color: white;
+}
+h1 {
+	padding: 0px;
+}
+h3 {
+	padding: 0px;
+}
+input {
+	margin: 10px;
+}

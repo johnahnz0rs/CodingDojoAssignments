@@ -1,0 +1,5 @@
+use twitter;
+select * from users;
+insert into users (first_name, last_name, handle, birthday, created_at, updated_at)
+values ('John', 'Ahn', 'johnahnz0rs', '1987-02-08', now(), now());
+select * from users;

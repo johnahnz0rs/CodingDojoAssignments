@@ -1,0 +1,62 @@
+* {
+	background-color: lightblue;
+	color: white;
+	font-family: trebuchet, helvetica, 'sans serif';
+}
+body {
+	background-color: lightblue;
+}
+.wrapper {
+	width: 970px;
+	margin: 50px auto;
+	background-color: lightblue;
+}
+.go {
+	margin-bottom: 30px;
+}
+.building {
+	width: 220px;
+	margin-left: 10px;
+	border: 2px solid black;
+	background-color: lightgreen;
+	display: inline-block;
+}
+.building-h3 {
+	text-align: center;
+	background-color: lightgreen;
+}
+.building-p {
+	text-align:center;
+	background-color: lightgreen;
+}
+.building form {
+	margin: 20px auto 40px auto;
+	background-color: lightgreen;
+}
+input {
+	display: block;
+	margin: auto;
+	background-color: white;
+	color: black;
+}
+.activities {
+	width: 960px;
+	border: 2px solid black;
+	margin: auto;
+	padding: 15px;
+	background-color: white;
+	height: 300px;
+	overflow: scroll;
+}
+.lose {
+	color: red;
+	background-color: white;
+}
+.win {
+	color: green;
+	background-color: white;
+}
+.reset-p {
+	text-align: center;
+	margin: 15px auto;
+}

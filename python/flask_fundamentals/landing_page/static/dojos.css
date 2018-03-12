@@ -1,0 +1,23 @@
+
+* {
+	font-family: trebuchet, helvetica, "sans serif";
+	background-color: lightblue;
+	color: white;
+}
+.wrapper {
+	width: 970px;
+	margin: 10px auto;
+
+}
+
+input {
+	background-color: purple;
+	margin: 5px;
+}
+
+.wrapper .newform {
+	border: 2px solid black;
+	width: 300px;
+	margin: 20px auto;
+	padding: 10px;
+}

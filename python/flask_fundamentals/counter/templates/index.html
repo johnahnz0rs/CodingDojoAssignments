@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Counter - coding dojo flask_fundamentals">
+	<link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='style.css') }}">
+	<title>Flask Counter</title>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>Counter</h1>
+		<p>{{ session['count'] }} times</p>
+		<form method='get' action='/add2'>
+			<input type='submit' name='add2' value="Add 2">
+		</form>
+		<form method='get' action='/reset'>
+			<input type="submit" name="reset" value='Reset'>
+		</form>
+	</div> <!-- end .wrapper -->
+</body>
+</html>

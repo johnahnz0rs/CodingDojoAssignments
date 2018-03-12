@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<meta name='description' content='Great Number Game - Coding Dojo'>
+	<link rel='stylesheet' href='{{ url_for("static", filename="style.css") }}'>
+	<!-- <script src='{{ url_for("static", filename="great_number_game.js") }}'></script> -->
+	<title>Great Number Game</title>
+	
+</head>
+
+<body>
+	<div class='wrapper'>
+		<h1>Welcome to the Great Number Game!</h1>
+		<p>I am thinking of a number between 1 and 100</p>
+		<p>Take a guess!</p>
+		<div class='guess-wrong'>
+			<h1>Too low!</h1>
+		</div>
+		<p>
+			<form method='post' action='/guess'>
+				<input type='text' name='guess' placeholder='take a guess'>
+				<input type='submit' value='Submit' id='submit'>
+			</form>
+		</p>
+	</div> <!-- end wrapper -->
+</body>
+
+</html>

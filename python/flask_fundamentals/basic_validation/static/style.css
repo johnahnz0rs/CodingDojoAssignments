@@ -1,0 +1,9 @@
+* {
+	font-family: trebuchet, helvetica, 'sans serif';
+	background-color: lightblue;
+	color: white;
+}
+.wrapper {
+	width: 970px;
+	margin: 20px auto;
+}

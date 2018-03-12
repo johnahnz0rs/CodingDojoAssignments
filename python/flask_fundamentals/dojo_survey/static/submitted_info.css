@@ -1,0 +1,24 @@
+* {
+	font-family: trebuchet, helvetica, "sans serif";
+	background-color: lightblue;
+	color: white;
+}
+.wrapper {
+	width: 970px;
+	margin: 10px auto;
+	text-align: center;
+}
+img {
+	margin: auto;
+}
+.results {
+	width: 500px;
+	margin: 20px auto;
+	border: 2px solid black;
+}
+	.results ul {
+		list-style-type: georgian;
+	}
+	.results li {
+		margin: 10px;
+	}

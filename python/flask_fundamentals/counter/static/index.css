@@ -1,0 +1,13 @@
+* {
+	font-family: trebuchet, helvetica, "sans serif";
+	background-color: lightblue;
+	color: white;
+}
+.wrapper {
+	width: 970px;
+	margin: 200px auto;
+}
+
+h1 {
+	text-align: center;
+}

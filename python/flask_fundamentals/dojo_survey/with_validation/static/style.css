@@ -1,0 +1,44 @@
+* {
+	background-color: lightblue;
+	color: white;
+	font-family: trebuchet, helvetica, 'sans serif';
+}
+.wrapper {
+	width: 970px;
+	margin: 10px auto;
+	border: 2px solid black;
+}
+
+/* index.html */
+.flash {
+	font-weight: bold;
+	color: red;
+}
+.form-name {
+	background-color: white;
+	color: black;
+}
+select {
+	background-color: white;
+	color: black;
+}
+.form-comment {
+	background-color: white;
+	color: black;
+}
+.form-submit {
+	background-color: lightgreen;
+	margin-left: 400px;
+}
+
+
+
+/* user_info.html */
+h1 {
+	text-decoration: underline;
+}
+.go-back {
+	background-color: lightgreen;
+	margin-left: 400px;
+	margin-top: 100px;
+}

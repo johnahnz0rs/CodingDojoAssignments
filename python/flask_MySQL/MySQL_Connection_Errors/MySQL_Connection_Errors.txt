@@ -1,0 +1,21 @@
+#typo in config['database']
+error message:
+    'database': bd, # we got db as an argument
+NameError: global name 'bd' is not defined
+
+fix #1: correct the typo in the config dict
+fix #2: correct the typo in the __init__ argument list
+
+
+#typo in config['user'] / incorrect username
+error message: 
+OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'roots'@'localhost' (using password: YES)") (Background on this error at: http://sqlalche.me/e/e3q8)
+
+fix: correct the typo in the config dict
+
+
+#incorrect sql port (used 4306)
+error message:
+OperationalError: (_mysql_exceptions.OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") (Background on this error at: http://sqlalche.me/e/e3q8)
+
+fix: enter the correct port number (3306)

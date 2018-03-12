@@ -1,0 +1,16 @@
+* {
+	font-family: trebuchet, helvetica, "sans serif";
+	background-color: lightblue;
+	color: white;
+}
+.wrapper {
+	width: 970px;
+	margin: 1000px auto;
+}
+h1, p {
+	text-align: center;
+}
+input {
+	display: block;
+	margin: 10px auto;
+}

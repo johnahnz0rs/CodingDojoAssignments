@@ -1,0 +1,19 @@
+* {
+	font-family: trebuchet, helvetica, "sans serif";
+	background-color: lightblue;
+	color: white;
+}
+
+.wrapper {
+	width: 970px;
+	margin: 10px auto;
+}
+
+.form {
+	border: 2px solid black;
+	width: 700px;
+}
+input {
+	margin: 10px;
+	background-color: purple;
+}

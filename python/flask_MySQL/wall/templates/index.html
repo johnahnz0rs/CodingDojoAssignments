@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<meta name='description' content=''>
+	<script></script>
+	<link rel='stylesheet' href='{{ url_for("static", filename="style.css") }}'>
+	<title>Login and Registration</title>
+	<link rel='shortcut icon' href='{{ url_for("static", filename="favicon.ico") }}'>
+</head>
+
+<body>
+	<div class='wrapper'>
+		<h1>Login or Register</h1>
+		<div class='login'>
+			<h1>Login</h1>
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+						<div class='error'>{{ message }}</div>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+			<form name="login" action='/login' method='post'>
+				<table>
+					<tr>
+						<td><label for='email'>Email: </label></td>
+						<td><input type='text' name='email' class='input-text'></td>
+					</tr>
+					<tr>
+						<td><label for='password'>Password: </label></td>
+						<td><input type='text' name='password' class='input-text'></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td><label for='submit'></label><input type='submit' name='submit' value='Login' class='input-submit'></td>
+					</tr>
+				</table>
+			</form>
+		</div> <!-- end .login -->
+		<div class='register'>
+			<h1>Register</h1>
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+						<div class='error'>{{ message }}</div>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+			<form name='register' action='/register' method='post'>
+				<table>
+					<tr>
+						<td><label for='first_name'>First Name:</label></td>
+						<td><input type='text' name='first_name' class='input-text'></td>
+					</tr>
+					<tr>
+						<td><label for='last_name'>Last Name:</label></td>
+						<td><input type='text' name='last_name' class='input-text'></td>
+					</tr>
+					<tr>
+						<td><label for='email'>Email: </label></td>
+						<td><input type='text' name='email' class='input-text'></td>
+					</tr>
+					<tr>
+						<td><label for='password'>Password: </label></td>
+						<td><input type='text' name='password' class='input-text'></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td class='small_font'>Password must be at least 8 characters</td>
+					</tr>
+					<tr>
+						<td><label for='cpassword'>Confirm Password: </label></td>
+						<td><input type='text' name='cpassword' class='input-text'></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td class='small_font'>Passwords must match, obvi</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td><label for='submit'></label><input type='submit' name='submit' value='Register' class='input-submit'></td>
+					</tr>
+				</table>
+			</form>
+		</div> <!-- end .register -->
+			
+
+			<!-- {% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+						<div class='fail'>{{ message }}</div>
+					{% endfor %}
+				{% endif %}
+			{% endwith %} -->
+
+
+	</div> <!-- end wrapper -->
+</body>
+
+</html>

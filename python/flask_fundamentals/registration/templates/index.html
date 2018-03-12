@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+	<head>
+		<meta charset='UTF-8'>
+		<meta name='description' content='Registration Form, assignment, flask_fundamentals, python, coding dojo'>
+		<link rel='stylesheet' href='{{ url_for("static", filename="style.css") }}'>
+		<script></script>
+		<title>Registration Form</title>
+	</head>
+
+	<body>
+		<div class='wrapper'>
+			<h1 class='header'>Welcome, n3wbz. You may registar below.</h1>
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+						<p class='error'>{{ message }}</p>
+					{% endfor %}
+				{% else %}
+					<p class='success'>{{ session['success'] }}</p>
+				{% endif %}
+			{% endwith %}
+			
+			<div class='registration'>
+				<div class='fields'>
+					<p class='input'>Email: </p>
+					<p class='input'>First Name: </p>
+					<p class='input'>Last Name: </p>
+					<p class='input'>Password: </p><br>* Password must contain at least: 8 characters, 1 Uppercase, and 1 number *
+					<p class='input'>Confirm Password:</p>
+				</div> <!-- end .fields -->
+				<div class='enter'>
+					<form method='post' action='/register' id='new_user'> 
+						<p class='input'><input class='input' type='email' name='email'></p>
+						<p class='input'><input class='input' type='text' name='first_name'></p>
+						<p class='input'><input class='input' type='text' name='last_name'></p>
+						<p class='input'><input class='input' type='password' name='password'></p><br>&nbsp;
+						<p class='input'><input class='input' type='password' name='confirm_password'></p>
+					</form>
+				</div> <!-- end .enter -->
+				<p class='input'><input form='new_user' class='submit' type='submit' value="Register Me">
+			</div> <!-- end .registration -->
+
+		</div> <!-- end wrapper -->
+	</body>
+
+</html>

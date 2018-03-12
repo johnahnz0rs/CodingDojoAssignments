@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<meta name='description' content='Dojo Survey with Validation, assignment, flask_fundamentals, coding dojo'>
+	<link rel='stylesheet' href='{{ url_for("static", filename="style.css") }}'>
+	<script></script>
+	<title>User Submitted Info</title>
+</head>
+
+<body>
+	<div class='wrapper'>
+		<h1>Submitted Info</h1>
+		<div class='submitted-info'>
+			<p>Name: {{ session['name'] }}</p>
+			<p>Dojo Location: {{ session['location']}}</p>
+			<p>Favorite Language: {{ session['language'] }}</p>
+			<p>Comment: {{ session['comment'] }}</p>
+			<p>
+				<form method='post' action='/'>
+					<input class='go-back' type='submit' value='Go Back'>
+				</form>
+			</p>
+		</div> <!-- end .submitted-info -->
+	</div> <!-- end wrapper -->
+</body>
+
+</html>

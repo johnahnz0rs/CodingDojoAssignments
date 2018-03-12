@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<meta name='description' content='Dojo Survey with Validation, assignment, flask_fundamentals, coding dojo'>
+	<link rel='stylesheet' href='{{ url_for("static", filename="style.css") }}'>
+	<script></script>
+	<title>Dojo Survey w/ Validation</title>
+</head>
+
+<body>
+	<div class='wrapper'>
+		* All Fields Required<br>
+		<p class='flash'>
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+						{{ message }}
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+		</p>
+		<form action='/submit_info' method='post'>
+			Your Name: <input type='text' name='name' class='form-name'><br>
+			Dojo Location: <select name='location'>
+				<option value='Silicon Valley'>Silicon Valley</option>
+				<option value='Seattle'>Seattle</option>
+				<option value='Los Angeles'>Los Angeles</option>
+				<option value='Dallas'>Dallas</option>
+				<option value='Chicago'>Chicago</option>
+				<option value='Tulsa'>Tulsa</option>
+				<option value='Washington DC'>Washington DC</option>
+			</select><br>
+			Favorite Language: <select name='language'>
+				<option value='HTML'>HTML</option>
+				<option value='CSS'>CSS</option>
+				<option value='JavaScript'>JavaScript</option>
+				<option value='Python'>Python</option>
+				<option value='Klingon'>Klingon</option>
+				<option value='Bad English'>Bad English</option>
+			</select><br>
+			Comment (max 120 char): <textarea name='comment' rows='4' cols='50' class='form-comment'></textarea><br>
+			<input type='submit' value="Submit" class='form-submit'>
+		</form>
+	</div> <!-- end wrapper -->
+</body>
+
+</html>
