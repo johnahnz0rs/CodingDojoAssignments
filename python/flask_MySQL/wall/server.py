@@ -2,9 +2,9 @@ from flask import Flask, request, redirect, render_template, session, flash, url
 from mysqlconnection import MySQLConnector
 import re
 import md5
-print '=' * 100
-print 'ph34r johnahnz0rs teh l33t h4x0r'
-print '=' * 100
+print '=' * 50
+print 'johnahnz0rs is l33t'
+print '=' * 50
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 import os, binascii
 # salt = binascii.b2a_hex(os.urandom(15))
@@ -12,80 +12,99 @@ salt = 'loln00b'
 
 
 app = Flask(__name__)
-app.secret_key = 'lolj00isn00b'
-mysql = MySQLConnector(app,'login_registration')
+app.secret_key = 'lolj00isn00bz'
+mysql = MySQLConnector(app,'wall')
 
 
 @app.route('/')
 def index():
-    print 'ph34r johnahnz0rs teh l33t h4x0r'
+    print 'johnahnz0rs is l33t'
     return render_template('index.html')
 
 
 @app.route('/login', methods=['post'])
 def login():
-    print 'ph34r johnahnz0rs teh l33t h4x0r'
-    email = request.form['email']
+    print 'johnahnz0rs is l33t'
+    form_email = request.form['email']
     password = request.form['password']
-    if len(email) < 1 or not EMAIL_REGEX.match(email):
-        flash('Invalid email address, homey. Try again, my dude.')
-        return redirect('/')
-    elif len(password) < 8:
-        flash('Invalid password, mang.')
-        return redirect('/')
-    else:
-        hashed_password = md5.new(password + salt).hexdigest()
-        login_query = 'select * from users where email = :email and password = :password'
-        login_data = {
-        'email': email,
+    hashed_password = md5.new(password + salt).hexdigest()
+    query_login = 'select * from users where email = :email and password = :password'
+    data_login = {
+        'email': form_email,
         'password': hashed_password
-        }
-        user = mysql.query_db(login_query, login_data)
-        if user[0]['password'] == hashed_password:
-            return redirect('/success')
-        flash('Incorrect email and/or password, bruh')
+    }
+    user = mysql.query_db(query_login, data_login)
+    if user:
+        for x in user:
+            if x['password'] == hashed_password:
+                session['id'] = x['id']
+                flash('Login success, mate.')
+                return redirect('/wall', user_info = user)
+    else:
+        flash('Incorrect email and/or password, bruh', 'login_error')
         return redirect('/')
 
 
 @app.route('/register', methods=['post'])
 def register():
-    print 'ph34r johnahnz0rs teh l33t h4x0r'
+    print 'johnahnz0rs is l33t'
     first_name = request.form['first_name']
     last_name = request.form['last_name']
     email = request.form['email']
-    password = request.form['password']
-    cpassword = request.form['cpassword']
     if len(first_name) < 2 or len(last_name) < 2:
-        flash("C'mon, tell me your name forreal.")
+        flash("C'mon, tell me your name forreal.", 'register_error')
         return redirect('/')
     elif len(email) < 1 or not EMAIL_REGEX.match(email):
-        flash("Invalid email address, homey. Try again, my dude.")
+        flash("Invalid email address; try again, my dude.", 'register_error')
         return redirect('/')
-    elif len(password) < 8:
-        flash('Password too short, dogg.')
+    elif len(request.form['password']) < 8:
+        flash('Password too short, dogg.', 'register_error')
         return redirect('/')
-    elif password != cpassword:
-        flash("Passwords don't match, my friend.")
+    elif request.form['password'] != request.form['cpassword']:
+        flash("Passwords don't match, my friend.", 'register_error')
         return redirect('/')
-    else:
-        hashed_password = md5.new(password + salt).hexdigest()
-        query = 'insert into users (first_name, last_name, email, password, cpassword, created_at, updated_at) values (:first_name, :last_name, :email, :password, :cpassword, now(), now());'
-        data = {
-            'first_name': first_name,
-            'last_name': last_name,
-            'email': email,
-            'password': hashed_password,
-            'cpassword': hashed_password
-        }
-        # mysql.query_db(query, data)
-        registration = mysql.query_db(query, data)
-        print session['id']
-        return redirect('/success')
+    hashed_password = md5.new(request.form['password'] + salt).hexdigest()
+    query = 'insert into users (first_name, last_name, email, password, created_at, updated_at) values (:first_name, :last_name, :email, :password, now(), now());'
+    data = {
+        'first_name': first_name,
+        'last_name': last_name,
+        'email': email,
+        'password': hashed_password
+    }
+    mysql.query_db(query, data)
+    flash('Registration successful, homey. Login to continue.', 'register_success')
+    return redirect('/')
 
 
-@app.route('/success')
-def success():
-    return render_template('success.html')
 
+@app.route('/wall')
+def wall():
+    # grab all messages made by user and store in session
+    query_messages = "select users.first_name, users.last_name, date_format(messages.created_at, '%M %D, %Y') as 'message_date', messages.message from messages join users on messages.user_id = users.id where users.id = :id order by messages.created_at desc"
+    data_messages = {
+        'id': session['id']
+    }
+    get_messages = mysql.query_db(query_messages, data_messages)
+    print session['len_user_messages']
+    #
+    # grab all comments to user's messages, sort by created_at asc/desc
+    print session['user_messages'][0]
+    return render_template('wall.html', user_messages = get_messages, )
+
+
+@app.route('/post_message')
+def post_message():
+    # 
+    return redirect('/wall')
+
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    print '='*50
+    print 'session is cleared'
+    print '='*50
+    flash('yu0 ar3 n0w logged 0ut', 'register_success')
+    return redirect('/')
 
 app.run(debug=True)

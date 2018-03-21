@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<meta name='description' content=''>
+	<script></script>
+	<link rel='stylesheet' href='{{ url_for("static", filename="wall_style.css") }}'>
+	<title>The Great Wall</title>
+	<link rel='shortcut icon' href='{{ url_for("static", filename="favicon.ico") }}'>
+</head>
+
+<body>
+	<div class='wrapper'>
+		<div class='header'>
+			<div class='coding_dojo'><h1>Coding Dojo Wall</h1></div>
+			<div class='greeting'>
+				Welcome {{ session['first_name'] }}
+			</div>
+			<div class='logout'>
+				<a href='/logout'>log off</a>
+			</div>
+		</div>
+
+		<div class='post_message'>
+			<span class='bold'>Post a message</span>
+			<form action='/post_message' method='post' id='post_message'>
+				<input type='hidden' value="{{ session['id'] }}" name='user_id'>
+				<textarea name='message' rows='4' cols='140'></textarea>
+			</form>
+			<input type='submit' value='Post a message' class='post_message_button' form='post_message'>
+		</div>
+
+		<div class='messages_comments'>
+			{% for message in all_messages %}
+				<div class='message_header'>
+					<span class='bold'>{{ message['first_name'] }} {{ message['last_name'] }} - {{ message['message_created_at'] }}</span>
+				
+					<div class='message_content'>
+						{{ message['message'] }}
+					</div>
+
+					{% for comment in all_comments %}
+						{% if message['id'] == comment['message_id'] %}
+							<div class='comment_header'>
+								<span class='bold'>{{ comment['first_name'] }}  {{ comment['last_name'] }} - {{ comment['comment_created_at'] }}</span>
+							</div>
+							<div class='comment_content'>
+								{{ comment['comment'] }}
+							</div>
+						{% endif %}
+					{% endfor %}
+
+					<div class='post_comment'>
+						<span class='bold'>Post a comment</span>
+						<form action='/post_comment' method='post' id='post_comment'>
+							<input type='hidden' value="{{ message['id'] }}" name='message_id'>
+							<textarea name='user_comment' rows='4' cols='130'></textarea>
+						</form>
+						<input type='submit' value='Post a comment' class='post_comment_button' form='post_comment'>
+					</div>
+
+				</div>
+				
+			{% endfor %}
+		</div>
+	</div> <!-- end wrapper -->
+</body>
+
+</html>

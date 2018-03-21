@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<meta name='description' content=''>
+	<link rel='stylesheet' href='{{ url_for("static", filename="style.css")}}'>
+	<link rel='shortcut icon' href='{{ url_for("static", filename="favicon.ico") }}'>
+	<script></script>
+	<title>Users New</title>
+</head>
+
+<body>
+	<div class='wrapper'>
+		<h1>Add a new user</h1>
+		<form action='/users/create', method='post' name='create_new_user'>
+			<p>
+				<label for='first_name'>First name:</label><br>
+				<input type='text' name='first_name'>
+			</p>
+			<p>
+				<label for='last_name'>Last name:</label><br>
+				<input type='text' name='last_name'>
+			</p>
+			<p>
+				<label for='email'>Email:</label><br>
+				<input type='text' name='email'>
+			</p>
+			<p><input type='submit' value='Create'></p>
+		</form>
+		<p>&nbsp;</p>
+		<p><a href='/users'>Go Back</a></p>
+	</div> <!-- end wrapper -->
+</body>
+
+</html>

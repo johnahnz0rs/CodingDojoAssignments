@@ -1,0 +1,59 @@
+* {
+	font-family: helvetica, helvetica, 'sans serif';
+}
+.wrapper {
+	width: 970px;
+	margin: 20px auto;
+}
+a {
+	color: blue;
+}
+input[type=submit] {
+	background-color: royalblue;
+	color: white;
+	padding: 5px 20px;
+	border: 1px solid black;
+	box-shadow: 5px 5px 5px black;
+	font-size: 14px;
+}
+input[type=text] {
+	width: 40%;
+	height: 20px;
+}
+/*index.html*/
+	/*table .all_users that displays all users on index.html*/
+.all_users {
+	border: 1px solid black;
+	border-bottom: 1px solid black;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+	.all_users tr:nth-child(even) {
+		background-color: gainsboro;
+	}
+	.all_users tr:nth-child(1) {
+		background-color: darkgray;
+	}
+	.all_users th:first-child {
+		text-align: right;
+	}
+	.all_users th {
+		/*border-top: 1px solid black;*/
+		border-bottom: 1px solid black;
+		padding: 2px 20px;
+		text-align: left;
+	}
+	.all_users td {
+		border-bottom: 1px solid black;
+		padding: 2px 20px;
+	}
+
+
+/*show_user.html*/
+	/*table .show_user that shows a single user's info on show_user.html*/
+.show_user td {
+	padding: 2px 20px;
+}
+
+
+

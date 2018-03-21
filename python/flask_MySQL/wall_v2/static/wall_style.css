@@ -1,0 +1,96 @@
+* {
+	font-family: trebuchet, helvetica, 'sans serif';
+	background-color: white;
+	color: black;
+}
+.wrapper {
+	width: 970px;
+	margin: 20px auto;
+}
+
+
+
+/* ################### */
+/* ################### */
+.header {
+	border-bottom: 2px solid white;
+	margin-bottom: 10px;
+}
+	.coding_dojo {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.greeting {
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 450px;
+	}
+	.logout {
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 50px;
+	}
+		.logout a {
+			color: blue;
+		}
+/* ################### */
+/* ################### */
+
+
+
+.bold {
+	font-weight: bold;
+}
+
+/* ################### */
+.post_message {
+	width: 800px;
+	margin: 30px auto 60px auto;
+}
+	.post_message_button {
+		background-color: blue;
+		color: white;
+		padding: 5px 10px;
+		float: right;
+		clear: both;
+	}
+/* ################### */
+.post_comment {
+	width: 800px;
+	margin: 40px auto 60px auto;
+	padding-left: 60px;
+}
+	.post_comment_button {
+		background-color: green;
+		color: white;
+		padding: 5px 10px;
+		float: right;
+		clear: both;
+	}
+
+/* ################### */
+.messages_comments {
+	width: 800px;
+	margin: 30px auto;
+}
+	.message_header {
+		width: 800px;
+		margin: 10px auto;
+	}
+	.message_content {
+		width: 800px;
+		margin: 10px auto 30px auto;
+		padding-left: 30px;
+	}
+
+/* ################### */
+	.comment_header {
+		width: 800px;
+		margin: 10px auto;
+		padding-left: 60px;
+	}
+	.comment_content {
+		width: 800px;
+		margin: 10px auto 30px auto;
+		padding-left: 60px;
+	}

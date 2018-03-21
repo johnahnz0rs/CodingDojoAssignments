@@ -7,34 +7,12 @@
 	width: 970px;
 	margin: 20px auto;
 }
-label {
-	color: black;
-}
-td {
-	text-align: right;
-	margin: 10px;
-}
-tr {
-	margin-bottom: 10px;
-}
-.error {
-	width: 250px;
-	margin: auto;
-	padding: 10px;
-	border: 1px solid black;
-	background-color: red;
-}
-.input-text {
-	width: 250px;
-}
-.input-submit {
-	background-color: green;
-}
+
 .login {
 	display: inline-block;
 	/*vertical-align: top;*/
 	width: 400px;
-	height: 300px;
+	height: 400px;
 	margin: 10px;
 	padding: 10px;
 	border: 1px solid blue;
@@ -49,7 +27,7 @@ tr {
 	display: inline-block;
 	vertical-align: top;
 	width: 400px;
-	height: 300px;
+	height: 400px;
 	margin: 10px;
 	padding: 10px;
 	border: 1px solid blue;
@@ -64,3 +42,36 @@ tr {
 		text-align: left;
 		color: gray;
 	}
+
+label {
+	color: black;
+}
+td {
+	text-align: right;
+	margin: 10px;
+}
+tr {
+	margin-bottom: 10px;
+}
+.error {
+	width: 250px;
+	margin: 10px auto;
+	padding: 10px;
+	border: 1px solid black;
+	background-color: red;
+}
+.success {
+	width: 250px;
+	margin: 10px auto;
+	padding: 10px;
+	border: 1px solid black;
+	background-color: lightgreen;
+	color: black;
+}
+.input-text {
+	width: 250px;
+	color: black;
+}
+.input-submit {
+	background-color: green;
+}

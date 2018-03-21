@@ -1,0 +1,68 @@
+* {
+	font-family: trebuchet, helvetica, 'sans serif';
+	background-color: lightblue;
+	color: white;
+}
+.wrapper {
+	width: 970px;
+	margin: 20px auto;
+}
+
+.success {
+	width: 250px;
+	margin: 10px auto;
+	padding: 10px;
+	border: 1px solid black;
+	background-color: lightgreen;
+	color: black;
+}
+
+.header {
+	border-bottom: 2px solid black;
+	margin-bottom: 10px;
+}
+.header_h1 {
+	display: inline-block;
+}
+.header_other {
+	display: inline-block;
+	margin-left: 450px;
+}
+	.header_other p {
+		display: inline-block;
+		margin-right: 50px;
+	}
+.header_logout a {
+	display: inline-block;
+	color: blue;
+}
+
+.make_a_post textarea {
+	background-color: white;
+	color: black;
+	width: 100%;
+}
+
+.post_message {
+	width: 800px;
+	margin: 10px auto;
+}
+.submit_post {
+	background-color: blue;
+	padding: 5px 10px;
+	float: right;
+	clear: both;
+}
+
+.display_messages {
+	width: 800px;
+	margin: 30px auto;
+}
+.message_date {
+	margin: 0px;
+}
+.message_content {
+	margin: 0px 0px 50px 30px;
+}
+
+

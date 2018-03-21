@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<meta name='description' content=''>
+	<script></script>
+	<link rel='stylesheet' href='{{ url_for("static", filename="wall_style.css") }}'>
+	<title>The Great Wall</title>
+	<link rel='shortcut icon' href='{{ url_for("static", filename="favicon.ico") }}'>
+</head>
+
+<body>
+	<div class='wrapper'>
+		<div class='header'>
+			<h1 class='header_h1'>CodingDojo Wall</h1>
+			<div class='header_other'><p>Welcome {{ session['first_name'] }}</p><p class='header_logout'><a href='/logout'>log off</a></p></div>
+		</div> <!-- end .header -->
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+					<div class='success'>{{ message }}</div>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+		<div class='post_message'>
+			<!-- form: post a message -->
+			<h2>Post a message</h2>
+			<form name='post_message' class='make_a_post' id='post_message' action='/post_message' method='post'>
+				<textarea name='message' form='post_message' rows='4'>Post a message</textarea><br>
+				<input type='submit' value="Post a message" class='submit_post'>
+			</form>
+		</div>
+
+		<div class='display_messages'>
+			{% for message in session['user_messages'] %}
+				<div class='message_date'><h4>{{ message['user_name'] }} - {{ message['message_date']}}</h4></div>
+				<div class='message_content'> {{ message['message']}}</div>
+
+				<!-- div display_comments -->
+
+
+					<!-- div post_comment -->
+
+
+			{% endfor %}
+
+
+			
+
+
+
+			<!-- testing {{ session['user_messages'][0]['message'] }} -->
+			<!-- display messages
+				- display first_name, last_name, created_at(month day-th, year)
+				- display messages.message
+				
+				display comments
+					- display first_name, last_name, created_at(month day-th, year)
+					- display comments.comment
+
+				form: post a comment -->
+
+
+		</div> <!-- end .display_messages -->
+
+	</div> <!-- end wrapper -->
+</body>
+
+</html>

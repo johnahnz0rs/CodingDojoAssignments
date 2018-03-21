@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<meta name='description' content=''>
+	<link rel='stylesheet' href='{{ url_for("static", filename="style.css")}}'>
+	<link rel='shortcut icon' href='{{ url_for("static", filename="favicon.ico") }}'>
+	<script></script>
+	<title>Users Show</title>
+</head>
+
+<body>
+	<div class='wrapper'>
+		{% for user in user_info %}
+		<h1>User {{ user.id }}</h1>
+		<table class='show_user'>
+			<tr>
+				<td>Full Name:</td>
+				<td>{{ user.full_name }}</td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td>{{ user.email }}</td>
+			</tr>
+			<tr>
+				<td>Created at:</td>
+				<td>{{ user.created_at}}</td>
+			</tr>
+		</table>
+		<p><a href='/users/{{ user.id }}/edit'>Edit</a> | <a href='users/{{ user.id }}/destroy'>Delete</a> | <a href="/users">Go Back</a></p>
+		{% endfor %}
+	</div> <!-- end wrapper -->
+</body>
+
+</html>

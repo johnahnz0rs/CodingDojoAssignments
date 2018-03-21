@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<meta name='description' content=''>
+	<script></script>
+	<link rel='stylesheet' href='{{ url_for("static", filename="style.css") }}'>
+	<title>Login and Registration</title>
+	<link rel='shortcut icon' href='{{ url_for("static", filename="favicon.ico") }}'>
+</head>
+
+<body>
+	<div class='wrapper'>
+		<h1>Login or Register</h1>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+			
+				{% for message in messages %}
+					<div class='flash_messages'>{{ message }}</div>
+				{% endfor %}
+			
+			{% endif %}
+		{% endwith %}
+
+
+		<div class='login_register'>
+			<h2>Login</h2>
+			<form id="login" action='/login' method='post'>
+				<table>
+					<tr>
+						<td class='label'><label for='email'>Email: </label></td>
+						<td><input type='text' name='email' class='input-text'></td>
+					</tr>
+					<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+					<tr>
+						<td class='label'><label for='password'>Password: </label></td>
+						<td><input type='text' name='password' class='input-text'></td>
+					</tr>
+				</table>
+				<label for='submit'></label><input type='submit' class='input-submit' form='login'>
+			</form>
+		</div> 
+		<div class='login_register'>
+			<h2>Register</h2>
+			<form id='register' action='/register' method='post'>
+				<table>
+					<tr>
+						<td class='label'><label for='first_name'>First Name:</label></td>
+						<td><input type='text' name='first_name' class='input-text'></td>
+					</tr>
+					<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+					<tr>
+						<td class='label'><label for='last_name'>Last Name:</label></td>
+						<td><input type='text' name='last_name' class='input-text'></td>
+					</tr>
+					<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+					<tr>
+						<td class='label'><label for='email'>Email: </label></td>
+						<td><input type='text' name='email' class='input-text'></td>
+					</tr>
+					<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+					<tr>
+						<td class='label'><label for='password'>Password: </label></td>
+						<td><input type='text' name='password' class='input-text'></td>
+					</tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+					<tr>
+						<td class='label'><label for='cpassword'>Confirm Password: </label></td>
+						<td><input type='text' name='cpassword' class='input-text'></td>
+					</tr>
+				</table>
+				<label for='submit'></label><input type='submit' class='input-submit' form='register'>
+			</form>
+		</div> 
+
+	</div> <!-- end wrapper -->
+</body>
+
+</html>

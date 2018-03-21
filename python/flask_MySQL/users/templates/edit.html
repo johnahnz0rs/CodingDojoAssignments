@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<meta name='description' content=''>
+	<link rel='stylesheet' href='{{ url_for("static", filename="style.css")}}'>
+	<link rel='shortcut icon' href='{{ url_for("static", filename="favicon.ico") }}'>
+	<script></script>
+	<title>Edit User {{ id }}</title>
+</head>
+
+<body>
+	<div class='wrapper'>
+		{% for user in user_edit %}
+		<h1>Edit User {{ user.id }}</h1>
+		<form action='/users/{{ user.id }}/' method='post' name='edit_user' class='form_edit_user'>
+			<p>
+				<label for='first_name'>First Name:</label><br>
+				<input type='text' name='first_name' value='{{ user.first_name }}'>
+			</p>
+			<p>
+				<label for='last_name'>Last Name:</label><br>
+				<input type='text' name='last_name' value='{{ user.last_name }}'>
+			</p>
+			<p>
+				<label for='email'>Email:</label><br>
+				<input type='text' name='email' value='{{ user.email }}'>
+			</p>
+			<p><input type='submit' value='Update'></p>
+		</form>
+
+		<p>&nbsp;</p>
+		<p><a href='/users/{{ user.id }}/'>Show</a> | <a href='/users'>Go Back</a></p>
+		{% endfor %}
+	</div> <!-- end wrapper -->
+</body>
+
+</html>

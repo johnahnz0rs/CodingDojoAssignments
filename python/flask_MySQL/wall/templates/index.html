@@ -15,10 +15,17 @@
 		<h1>Login or Register</h1>
 		<div class='login'>
 			<h1>Login</h1>
-			{% with messages = get_flashed_messages() %}
+			{% with messages = get_flashed_messages(category_filter=['login_error']) %}
 				{% if messages %}
 					{% for message in messages %}
 						<div class='error'>{{ message }}</div>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+			{% with messages = get_flashed_messages(category_filter=['register_success']) %}
+				{% if messages %}
+					{% for message in messages %}
+						<div class='success'>{{ message }}</div>
 					{% endfor %}
 				{% endif %}
 			{% endwith %}
@@ -41,7 +48,7 @@
 		</div> <!-- end .login -->
 		<div class='register'>
 			<h1>Register</h1>
-			{% with messages = get_flashed_messages() %}
+			{% with messages = get_flashed_messages(category_filter=['register_error']) %}
 				{% if messages %}
 					{% for message in messages %}
 						<div class='error'>{{ message }}</div>
