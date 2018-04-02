@@ -1,0 +1,64 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="lol johnahnz0rs is t3h pwnz">
+        <title>Session Words</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'session_words/css/index.css' %}">
+    </head>
+    <body>
+        <div class="wrapper">
+
+            <div class="form">
+                <h2>Add a new word</h2>
+                <form name="add_new_word" action="/process" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="new_word" class="form_text" placeholder="add a new word">
+
+                    <p>Choose color</p>
+                    <input type="radio" name="color" value="red">Red<br>
+                    <input type="radio" name="color" value="green">Green<br>
+                    <input type="radio" name="color" value="blue">Blue
+
+                    <p>
+                        <br><input type="checkbox" name="font_size" value="large"> show in BIG fonts!
+                    </p>
+
+                    <input class="button_add" type="submit" value="Add to Session">
+                </form>
+
+            </div>
+
+            <div class="display">
+                <form name="clear_session" action="/clear_session" method="post">
+                    {% csrf_token %}
+                    <input class="button_clear" type="submit" value="Clear Session">
+                </form>
+                <p class="display_submissions">
+                    {% if request.session.submit_count > 0 %}
+                        <table>
+                        {% for submission in request.session.user_submission %}
+                            <tr>
+                                <td class="display_left {{ submission.color }} {{ submission.font_size }}">{{submission.word }}</td>
+                                <td class="display_right">{{ submission.timestamp }}</td>
+                            </tr>
+                        {% endfor %}
+                        </table>
+                    {% endif %}
+                </p>
+                <!--<p>-->
+                    <!--{% if request.session.user_submissions %}-->
+                    <!--<table>-->
+                        <!--{% for submission in request.session.user_submissions %}-->
+                        <!--<td class="display_left {{submission.color}} {{submission.font_size}}">{{ submission.word }}</td>-->
+                        <!--<td class="display_right">{{ submission.</td>-->
+
+                        <!--{% endfor %}-->
+                    <!--</table>-->
+                    <!--{% endif %}-->
+                <!--</p>-->
+
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<meta name='description' content='Ninja Gold - Django'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    {% load static %}
+	<link rel='stylesheet' href='{% static "style.css" %}'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<title>Ninja Money</title>
+</head>
+
+<body>
+	<div class='wrapper'>
+		<div class='header'>
+			<h3>Your Gold: {{ request.session.gold }}</h3>
+		</div> <!-- end .header -->
+		<div class='go'>
+			<div class='building'>
+				<h3 class='building-h3'>Farm</h3>
+				<p class='building-p'>(earns 10-20 gold)</p>
+				<form action='/process_money' method='POST'>
+                    {% csrf_token %}
+					<input type='hidden' name='building' value='farm'>
+					<input type='submit' value='Find Gold!'>
+				</form>
+			</div>
+			<div class='building'>
+				<h3 class='building-h3'>Cave</h3>
+				<p class='building-p'>(earns 5-10 gold)</p>
+				<form action='/process_money' method='post'>
+                    {% csrf_token %}
+					<input type='hidden' name='building' value='cave'>
+					<input type='submit' value='Find Gold!'>
+				</form>
+			</div>
+			<div class='building'>
+				<h3 class='building-h3'>House</h3>
+				<p class='building-p'>(earns 2-5 gold)</p>
+				<form action='/process_money' method='post'>
+                    {% csrf_token %}
+					<input type='hidden' name='building' value='house'>
+					<input type='submit' value='Find Gold!'>
+				</form>
+			</div>
+			<div class='building'>
+				<h3 class='building-h3'>Casino</h3>
+				<p class='building-p'>(earns/takes 0-50 gold)</p>
+				<form action='/process_money' method='post'>
+                    {% csrf_token %}
+					<input type='hidden' name='building' value='casino'>
+					<input type='submit' value='Find Gold!'>
+				</form>
+			</div>
+		</div> <!-- end .go -->
+
+		<p>Activities:</p>
+		<div class='activities'>
+			{% if request.session.activities %}
+				{% for activity in request.session.activities %}
+					{% if 'Earned' not in activity %}
+						<p class='lose'>{{ activity }}</p>
+					{% else %}
+						<p class='win'>{{ activity }}</p>
+					{% endif %}
+				{% endfor %}
+			{% endif %}
+		</div> <!-- end .activities -->
+
+		<p class='reset-p'><a href="/reset">Reset</a></p>
+	</div> <!-- end wrapper -->
+</body>
+
+</html>

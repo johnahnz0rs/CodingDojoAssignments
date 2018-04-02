@@ -1,0 +1,48 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="lol johnahnz0rs is pwnz0rs">
+        <title>Survey Form</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'surveys/css/index.css' %}">
+    </head>
+    <body>
+        <div class="wrapper">
+            <form class="form" name="survey" action="/process" method="post">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <td class="left">Your Name:</td>
+                        <td class="right"><input type="text" name="name"></td>
+                    </tr>
+                    <tr>
+                        <td class="left">Dojo Location:</td>
+                        <td class="right">
+                            <select name="location">
+                                <option value="Burbank" selected>Burbank</option>
+                                <option value="San Francisco">San Francisco</option>
+                                <option value="Washington, DC">Washington, DC</option>
+                                <option value="Your Butt">Your Butt</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="left">Favorite Language:</td>
+                        <td class="right">
+                            <select name="language">
+                                <option value="JavaScript" selected>JavaScript</option>
+                                <option value="Python">Python</option>
+                                <option value="HTML">HTML</option>
+                                <option value="Elvish">Elvish</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <br>&nbsp;
+                <br><span class="left">Comment (optional):</span>
+                <textarea class="comment" name="comment" rows="4" cols="80"></textarea>
+                <p><input class="submit" type="submit" value="Submit"></p>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="coding dojo django assignment amadon">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            h1 { margin: 20px 0px; }
+            h2 { margin: 40px 0px; }
+            .display { margin: 30px 0px; }
+        </style>
+        <title>Amadon Shopping History</title>
+    </head>
+
+
+    <body>
+        <div class="container">
+            <h1>Shopping History</h1>
+            {% for x in range(1, len(request.session.shopping_history)) %}
+                <h2>Trip #{{ trip }}</h2>
+                <div class="display">
+                    <p>Item: {{ request.session.shopping_history.x.item }}</p>
+                    <p>Quantity: {{ request.session.shopping_history.x.quantity }}</p>
+                    <p>Cost: {{ request.session.shopping_history.x.cost }}</p>
+                </div>
+            {% endfor %}
+
+            <p><a href="/">Home</a></p>
+            <p><a href="/reset">Reset</a></p>
+        </div>
+</body>
+</html>

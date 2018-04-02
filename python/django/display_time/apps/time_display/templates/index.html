@@ -3,6 +3,8 @@
         <meta charset="utf-8">
         <meta name="description" content="lol johnahnz0rs is l33t">
         <title>Date and Time</title>
+            {% load static %}
+        <link rel="stylesheet" href="{% static 'css/index.css' %}" media="screen" title="no title" charset="utf-8">
     </head>
     <body>
         <div class="wrapper">
@@ -10,14 +12,9 @@
                 The current time and date:
             </div>
             <div class="date_time">
-                {{ context.date
-
-
+                <h2>{{ date }}</h2>
+                <h2>{{ time }}</h2>
             </div>
-
         </div>
     </body>
-
-
-
 </html>

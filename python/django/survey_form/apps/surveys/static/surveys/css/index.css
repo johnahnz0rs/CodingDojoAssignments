@@ -1,0 +1,47 @@
+* {
+    font-family: helvetica, trebuchet, 'sans serif';
+}
+
+.wrapper {
+    width: 970px;
+    margin: 20px auto;
+}
+
+.form {
+    width: 600px;
+    display: block;
+    padding: 20 10 60 10;
+    margin: 20px auto;
+    border: 1px solid black;
+}
+
+    .left {
+        width: 140px;
+        padding: 10 5 10 20;
+    }
+
+    .right {
+        width: 380px;
+    }
+        .right input {
+            width: 100%;
+        }
+
+        .right select {
+            width: 100%;
+        }
+
+    .comment {
+        width: 90%;
+        padding: 5 5 5 10;
+        margin-left: 20;
+    }
+
+    .submit {
+        background-color: blue;
+        border: 1px solid black;
+        color: white;
+        padding: 5px 20px;
+        margin: 5px 30px 5 5;
+        float: right;
+    }

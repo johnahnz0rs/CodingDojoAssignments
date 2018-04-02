@@ -1,0 +1,58 @@
+* {
+    font-family: helvetica, trebuchet, 'sans serif';
+}
+
+.wrapper {
+    width: 970px;
+    margin: 20px auto;
+    border: 1px solid purple;
+}
+
+.header {
+    width: 50%;
+    padding: 20;
+    margin: 10 auto;
+    background-color: lightgreen;
+}
+
+.results {
+    width: 50%;
+    padding: 20;
+    margin: 10;
+    margin: auto;
+}
+
+    .bold_underline {
+        font-weight: bold;
+        font-decoration: underline;
+        text-align: center;
+    }
+
+    .results table {
+        padding: 20px;
+    }
+
+    .left {
+        width: 30%;
+        padding: 10;
+    }
+
+    .right {
+        width: 70%;
+        padding: 10;
+    }
+
+    .button {
+        float: right;
+        padding: 5 20;
+        border: 1 solid black;
+        background-color: blue;
+        color: white;
+    }
+
+.submit {
+    background-color: blue;
+    color: white;
+    padding: 5 20;
+    float: right;
+}

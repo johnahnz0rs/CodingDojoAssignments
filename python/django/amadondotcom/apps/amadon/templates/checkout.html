@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="coding dojo django assignment amadon">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            h1 { margin: 20px 0px; }
+            .display { width: 500px; margin: 20px 40px; }
+        </style>
+        <title>Amadon Checkout</title>
+    </head>
+
+
+    <body>
+        <div class="container">
+            <h1>Thank you for your business!</h1>
+            <div class="display">
+                <p>We charged your credit card for ${{ request.session.cost_this_purchase }}.</p>
+                <p>You have ordered {{request.session.count_total }} items so far and spent ${{ request.session.cost_total }} with Amadon.com!</p>
+            </div>
+            <p><a href="/">Go back</a></p>
+            <p><a href="/reset">Reset</a></p>
+        </div>
+</body>
+</html>

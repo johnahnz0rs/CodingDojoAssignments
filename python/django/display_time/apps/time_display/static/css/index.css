@@ -1,0 +1,30 @@
+* {
+    font-family: helvetica, trebuchet, 'sans serif';
+    width: 970px;
+    margin: 20px auto;
+}
+
+body {
+    background-color: lightblue;
+    color: white
+}
+
+.header {
+    margin: auto;
+    border: 3px solid white;
+    width: 200px;
+    text-align: center;
+    padding: 20px;
+}
+
+.date_time {
+    border: 3px solid white;
+    width: 400px;
+    padding: 20px;
+}
+
+    .date_time h2 {
+        margin: auto;
+        width: 100%;
+        text-align: center;
+    }
