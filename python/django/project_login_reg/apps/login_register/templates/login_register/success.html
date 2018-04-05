@@ -1,0 +1,27 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Coding Dojo > Python > Django > Login and Registration">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'login_register/bootstrap.css' %}">
+        <title>Login & Reg | Success</title>
+        <style>
+            .green_text { color: green; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Success! Welcome, {{ user.first_name }}!</h1>
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="green_text">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+
+            <p>&nbsp;</p>
+
+            <p><a href="/">Back to Homepage</a></p>
+
+        </div>
+    </body>
+</html>

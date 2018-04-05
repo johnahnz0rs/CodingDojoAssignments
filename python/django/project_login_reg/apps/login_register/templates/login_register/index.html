@@ -1,0 +1,74 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Coding Dojo > Python > Django > Login and Registration">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'login_register/bootstrap.css' %}">
+        <title>Login & Reg | Success</title>
+        <style>
+            .submit_button { margin-left: 400px; background-color: blue; color: white;}
+            .red_text { color: red; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Registration</h1>
+            <form method="POST" action="/login_register/register">
+                {% csrf_token %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="red_text">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+                <table>
+                    <tr>
+                        <td><label for="first_name">First Name:</label></td>
+                        <td><input type="text" name="first_name"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="last_name">Last Name:</label></td>
+                        <td><input type="text" name="last_name"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td><input type="text" name="email"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password:</label></td>
+                        <td><input type="text" name="first_name"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="c_password">Confirm PW:</label></td>
+                        <td><input type="text" name="c_password"></td>
+                    </tr>
+                </table>
+                <p class="submit_button">
+                    <input type="submit" value="Register">
+                </p>
+            </form>
+
+            <p>&nbsp;</p>
+
+            <h1>Login</h1>
+            <form method="POST" action="/login_register/login">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <td><label for="email">Email: </label></td>
+                        <td><input type="text" name="email"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password:</label></td>
+                        <td><input type="text" name="password"></td>
+                    </tr>
+                </table>
+                <p class="submit_button">
+                    <input type="submit" value="Login">
+                </p>
+            </form>
+
+
+
+        </div>
+    </body>
+</html>

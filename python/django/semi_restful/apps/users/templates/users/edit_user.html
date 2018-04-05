@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Coding Dojo > Python > Django > Semi-Restful > Users">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/style.css' %}">
+    <link rel="stylesheet" href="{% static 'users/bootstrap.css' %}">
+    <link rel="shortcut icon" href="{% static 'users/favicon.ico' %}">
+	<title>Edit Users</title>
+</head>
+
+
+<body>
+	<div class='wrapper'>
+		<h1>Edit User {{ user.id }}</h1>
+		<form action='/update' method='POST' name='edit_user' class='form_edit_user'>
+            {% csrf_token %}
+            <input type="hidden" name="user_id" value="{{ user.id }}">
+			<p>
+				<label for='first_name'>First Name:</label><br>
+				<input type='text' name='first_name' value='jabroni {{ user.first_name }}'>
+			</p>
+			<p>
+				<label for='last_name'>Last Name:</label><br>
+				<input type='text' name='last_name' value='{{ user.last_name }}'>
+			</p>
+			<p>
+				<label for='email'>Email:</label><br>
+				<input type='text' name='email' value='{{ user.email }}'>
+			</p>
+			<p><input type='submit' value='Update'></p>
+		</form>
+
+		<p>&nbsp;</p>
+		<p><a href='/users/{{ user.id }}/'>Show</a> | <a href='/users'>Go Back</a></p>
+	</div> <!-- end wrapper -->
+</body>
+
+</html>

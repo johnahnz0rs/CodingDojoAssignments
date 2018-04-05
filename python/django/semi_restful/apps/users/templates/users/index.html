@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Coding Dojo > Python > Django > Semi-Restful > Users">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/style.css' %}">
+    <link rel="stylesheet" href="{% static 'users/bootstrap.css' %}">
+    <link rel="shortcut icon" href="{% static 'users/favicon.ico' %}">
+	<title>Users Index</title>
+</head>
+
+<body>
+	<div class='wrapper'>
+		<h1>Users</h1>
+		<table class='all_users'>
+			<tr>
+				<th>id</th>
+				<th>Full Name</th>
+				<th>Email</th>
+				<th>Created At</th>
+				<th>Actions</th>
+			</tr>
+			{% for user in all_users %}
+				<tr>
+					<td>{{ user.id }}</td>
+					<td>{{ user.first_name }} {{ user.last_name }}</td>
+					<td>{{ user.email }}</td>
+					<td>{{ user.created_at}}</td>
+					<td><a href='/users/{{ user.id }}'>Show</a> <a href='/users/{{ user.id }}/edit'>Edit</a> <a href='/users/{{ user.id }}/destroy'>Delete</a></td>
+				</tr>
+			{% endfor %}
+		</table>
+		<p><a href='/users/new'>Add a new user</a></p>
+	</div> <!-- end wrapper -->
+</body>
+
+</html>

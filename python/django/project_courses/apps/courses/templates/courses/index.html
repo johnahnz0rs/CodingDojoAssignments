@@ -1,0 +1,53 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Coding Dojo > Python > Django > Courses">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'courses/index.css' %}">
+        <link rel="stylesheet" href="{% static 'courses/bootstrap.css' %}">
+        <title>Add a student to all bootcamp courses</title>
+        <style>
+            .submit { margin-left: 200px;}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Add a new course</h1>
+            <form action="/add_course" method="POST" name="add_course">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <td><label for="name">Name: </label></td>
+                        <td><input type="text" name="name"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="desc">Description:</label></td>
+                        <td><input type="text" name="desc" cols="100" rows="4"></td>
+                    </tr>
+                </table>
+                    <p class="submit"><input type="submit" value="Add"></p>
+                </form>
+
+            <h1>Courses</h1>
+            <table>
+                <thead>
+                    <th>Course Name</th>
+                    <th>Description</th>
+                    <th>Date Added</th>
+                    <th>Actions</th>
+                </thead>
+                {% for course in courses %}
+                <tr>
+                    <td>{{ course.name }}</td>
+                    <td>{{ course.desc }}</td>
+                    <td>{{ course.created_at }}</td>
+                    <td><a href="/{{ course.id }}/remove_course">remove</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+
+
+        </div>
+    </body>
+
+</html>
