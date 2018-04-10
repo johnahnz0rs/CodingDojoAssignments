@@ -1,0 +1,50 @@
+<html lang="en">
+    <head>
+    	<meta charset="UTF-8">
+    	<meta name="description" content="johnahnz0rs > Coding Dojo > MEAN > JS Fundamentals > JS DOM 1">
+        <title>JavaScript DOM 1</title>
+        <style>
+            * {
+                font-family: helvetica, trebuchet, 'sans serif';
+            }
+            .wrapper {
+                width: 960px;
+                margin: 20px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>Students</h1>
+            <ul id="main">
+                <!-- this is empty -->
+            </ul>
+            <script>
+                function appendList(array, id) {
+                    // finish this function
+                    for (let i = 0; i < array.length; i++) {
+                        let new_student = document.createElement("li");
+                        new_student.innerHTML = array[i];
+                        document.getElementById(id).appendChild(new_student);
+                    }
+                }
+                let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+                let target_id = "main";
+                appendList(students, target_id);
+                
+
+
+
+                // Bonus
+                function superAppend(array, element, id) {
+                    for (let i = 0; i < array.length; i++) {
+                        let new_thing = document.createElement(element);
+                        new_thing.innerHTML = array[i];
+                        document.getElementById(id).appendChild(new_thing);
+                    }
+                }
+            </script>
+
+        </div>
+    </body>
+</html>

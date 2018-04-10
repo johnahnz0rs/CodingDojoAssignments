@@ -1,0 +1,70 @@
+<html lang="en">
+    <head>
+    	<meta charset="UTF-8">
+    	<meta name="description" content="johnahnz0rs > Coding Dojo > MEAN > JS Fundamentals > JS Intermediate">
+        <title>JavaScript Intermediate</title>
+        <style>
+            * {
+                font-family: helvetica, trebuchet, 'sans serif';
+            }
+            .wrapper {
+                width: 960px;
+                margin: 20px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>johnahnz0rs is l33t</h1>
+
+            <script>
+                // Part 1 - Create a function called starString() that takes a number and returns a string of that many *.
+                function starString(number) {
+                    return_string = "";
+                    for (let i = 0; i < number; i++) {
+                        return_string += "*";
+                    }
+                    return return_string;
+                }
+                // Part 1 test:
+                // console.log("testing part 1");
+                // let stars = starString(8);
+                // console.log(stars);
+                
+
+                // Part 2 - Create a function called drawStars() that takes an array of numbers and prints out *
+                function drawStars(array) {
+                    for (let i = 0; i < array.length; i++) {
+                        if (typeof array[i] === "number") {
+                            console.log(starString(array[i]));
+                        }
+                        else if (typeof array[i] === "string") {
+                            log_string = "";
+                            for (let j = 0; j < array[i].length; j++) {
+                                log_string += array[i][0].toLowerCase();
+                            }
+                            console.log(log_string);
+                        }
+                    }
+                    return "johnahnz0rs is l33t";
+                }
+                // Part 2 test:
+                // console.log("testing part 2");
+                // let x = [4, 6, 1, 3, 5, 7, 25];
+                // drawStars(x);
+
+
+                // Part 3 - Modify the function above. Allow an array containing integers and strings to be passed to the drawStars() function. When a string is passed, instead of displaying *, display the first letter of the string according to the example below. You may use the .toLowerCase() string method for this part.
+                // Modifications were made above (in the function definition in Part 2) because johnahnz0rs is l33t.
+                
+                // Part 3 test:
+                // console.log("testing part 3")
+                // let x = [4, "Tom", 1, "Michael", 5, 7, "Jimmy Smith"]
+                // drawStars(x)
+
+
+            </script>
+
+        </div>
+    </body>
+</html>

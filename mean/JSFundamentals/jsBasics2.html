@@ -1,0 +1,75 @@
+<html lang="en">
+    <head>
+    	<meta charset="UTF-8">
+    	<meta name="description" content="johnahnz0rs > Coding Dojo > MEAN > JS Fundamentals > JS Basics 2">
+        <title>JavaScript Basics 2</title>
+        <style>
+            * {
+                font-family: helvetica, trebuchet, 'sans serif';
+            }
+            .wrapper {
+                width: 960px;
+                margin: 20px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>johnahnz0rs is l33t</h1>
+
+            <script>
+                function magic_multiply(x, y) {
+                    if (x === 0 && y == 0) {
+                        return "All inputs 0";
+                    }
+                    else if (typeof x === "object") {
+                        return_object = [];
+                        for (let i = 0; i < x.length; i++) {
+                            return_object.push(x[i] * y);
+                        }
+                        return return_object;
+                    }
+                    else if (typeof y === "string") {
+                        return "Error: Cannot multiply by string"
+                    }
+                    else if (typeof x === "string" && typeof y === "number") {
+                        return_string = "";
+                        for (let i = y; i > 0; i--) {
+                            return_string += x;
+                        }
+                        return return_string;
+                    }
+                    return x * y;
+                }
+
+                let bar = "*******************"
+                
+                let test1 = magic_multiply(5, 2);
+                console.log(bar);
+                console.log("test 1");
+                console.log(test1);
+
+                let test2 = magic_multiply(0, 0);
+                console.log(bar);
+                console.log("test 2");
+                console.log(test2);
+
+                let test3 = magic_multiply([1,2,3], 2);
+                console.log(bar);
+                console.log("test3");
+                console.log(test3);
+
+                let test4 = magic_multiply(7, "three");
+                console.log(bar);
+                console.log("test4");
+                console.log(test4);
+
+                let test5 = magic_multiply("Brendo", 4);
+                console.log(bar);
+                console.log("test5");
+                console.log(test5);
+            </script>
+
+        </div>
+    </body>
+</html>

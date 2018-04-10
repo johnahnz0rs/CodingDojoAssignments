@@ -1,0 +1,72 @@
+<html lang="en">
+    <head>
+    	<meta charset="UTF-8">
+    	<meta name="description" content="johnahnz0rs > Coding Dojo > MEAN > JS Fundamentals > JS Math">
+        <title>JavaScript Math</title>
+        <style>
+            * {
+                font-family: helvetica, trebuchet, 'sans serif';
+            }
+            .wrapper {
+                width: 960px;
+                margin: 20px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>johnahnz0rs is l33t</h1>
+
+            <script>
+
+                function zero_negativity(array) {
+                    for (let i = 0; i < array.length; i++) {
+                        if (array[i] < 0) {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+
+
+                function is_even(number) {
+                    if (number % 2 === 0) {
+                        return true;
+                    }
+                    return false;
+                }
+
+
+                function how_many_even(array) {
+                    even_count = 0;
+                    for (let i = 0; i < array.length; i++) {
+                        if (is_even(array[i])) {
+                            even_count += 1;
+                        }
+                    }
+                    return even_count;
+                }
+
+                function getRandomInt(min, max) {
+                    min = Math.ceil(min);
+                    max = Math.floor(max);
+                    return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+                }
+                function create_dummy_array(n) {
+                    return_array = [];
+                    for (let i = 0; i < n; i++) {
+                        return_array.push(getRandomInt(0,10));
+                    }
+                    return return_array;
+                }
+
+                function random_choice(array) {
+                    random_index = getRandomInt(0, array.length+1);
+                    return array[random_index];
+                }
+
+            </script>
+
+        </div>
+    </body>
+</html>
