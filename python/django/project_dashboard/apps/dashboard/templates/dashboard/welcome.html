@@ -1,0 +1,54 @@
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="johnahnz0rs > coding dojo > python > django > user dashboard">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'dashboard/bootstrap.css' %}">
+        <link rel="shortcut icon" href="{% static 'dashboard/favicon.ico' %}">
+        <link rel="stylesheet" href="../../static/dashboard/bootstrap.css">
+        <title>Home Page</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
+                <a class="navbar-brand disabled" href="#">Test App</a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-link align-self-end">
+                            <a class="nav-link" href="/signin">Sign In</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+            </nav>
+            <!--<div class="navbar-nav">-->
+                <!--<a class="navbar-brand d-flex disabled" href="#">Test App</a>-->
+                <!--<span class="d-flex"><a class="nav-link" href="/">Home</a></span>-->
+                <!--<span class="d-flex justify-content-end"><a class="nav-link" href="/signing">Sign In</a></span>-->
+            <!--</div>-->
+            <div class="jumbotron">
+                <h1>Welcome to the Test</h1>
+                <p class="lead">We're going to build a cool application using a MVC framework! This application was with by johnahnz0rs!</p>
+                <form action="/signin" method="get">
+                    {% csrf_token %}
+                    <input type="submit" value="Start">
+                </form>
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+    </body>
+</html>
