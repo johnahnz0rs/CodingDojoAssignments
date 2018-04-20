@@ -1,0 +1,228 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="johnahnz0rs > Coding Dojo > MEAN > JS OOP > Deck of Cards">
+        <title>Deck of Cards</title>
+        <style>
+            * {
+                font-family: helvetica, trebuchet, 'sans serif';
+            }
+            .wrapper {
+                width: 960px;
+                margin: 20px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h3>lol johnahnz0rs is l33t</h3>
+
+            <script>
+                // this creates a Card object;
+                // each card has a name (e.g. 7 of hearts), the unicode, the number/value, the suite, and a ref (for referring to the coresponding .png image);
+                class Card {
+                    constructor(name, unicode, number, suite, ref) {
+                        this.name = name;
+                        this.unicode = unicode;
+                        this.number = number;
+                        this.suite = suite;
+                        this.ref = ref;
+                    }
+                }
+
+            	class Deck {
+                    // name the deck (i guess?) and tell me how many decks you want to use;
+                    constructor(numberOfDecks) {
+                        this.cards = [];
+                        this.unicode_base = "U+1F0";
+                        this.suites = ["A", "B", "C", "D"];
+                        this.numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "D", "E"];
+                        for (let i = 0; i < numberOfDecks; i++) {
+                            this.addDeck();
+                        }
+                    }
+
+                    // DONE - prints all the Card.ref's in the deck;
+                    // updated - i made the cards console.log neatly (re: spacing between characters);
+                    printCards() {
+                        console.log("lol logging all cards (" + this.cards.length + ")");
+                        let print_string = "";
+                        for (let i = 0; i < this.cards.length; i++) {
+                            if (i != 0 && (i+1) % 5 == 0) {
+                                print_string += this.cards[i]['ref'] + `\n`;
+                            } else {
+                                if (this.cards[i]['ref'].length == 2) {
+                                    print_string += this.cards[i]['ref'] + "  |  ";
+                                } else {
+                                    print_string += this.cards[i]['ref'] + " |  ";
+                                }
+                            }
+                        }
+                        console.log(print_string);
+                        return this;
+                    }
+
+                    // DONE - shuffles the current this.cards;
+                    shuffle() {
+                        console.log('shuffling');
+                        let m = this.cards.length,
+                            t,
+                            i;
+                        while (m) {
+                            i = Math.floor(Math.random() * m--);
+                            t = this.cards[m];
+                            this.cards[m] = this.cards[i];
+                            this.cards[i] = t;
+                        }
+                        return this;
+                    }
+
+                    // DONE - this creates the standard 52 cards (in order) and adds them to this.cards;
+                    addDeck() {
+                        // for each deck, cycle through the 4 suites;
+                        for (let s = 0; s < this.suites.length; s++) {
+                            // Rename the SUITES so humans can read it, instead of just the unicode;
+                            let suite_name;
+                            let suite_ref;
+                            if (s == 0) {
+                                suite_name = "Spades";
+                                suite_ref = "s";
+                            } else if (s == 1) {
+                                suite_name = "Hearts";
+                                suite_ref = "h";
+                            } else if (s == 2) {
+                                suite_name = "Diamonds";
+                                suite_ref = "d";
+                            } else {
+                                suite_name = "Clubs";
+                                suite_ref = "c";
+                            }
+
+                            // for each suite, cycle through the 13 numbers/values;
+                            for (let n = 0; n < this.numbers.length; n++) {
+                                // Rename the NUMBERS so humans can read it, instead of just the unicode;
+                                let number_name;
+                                let number_ref;
+                                if (n == 0) {
+                                    number_name = "Ace";
+                                    number_ref = "1";
+                                } else if (n == 1) {
+                                    number_name = "Two";
+                                    number_ref = "2";
+                                } else if (n == 2) {
+                                    number_name = "Three";
+                                    number_ref = "3";
+                                } else if (n == 3) {
+                                    number_name = "Four";
+                                    number_ref = "4";
+                                } else if (n == 4) {
+                                    number_name = "Five";
+                                    number_ref = "5";
+                                } else if (n == 5) {
+                                    number_name = "Six";
+                                    number_ref = "6";
+                                } else if (n == 6) {
+                                    number_name = "Seven";
+                                    number_ref = "7";
+                                } else if (n == 7) {
+                                    number_name = "Eight";
+                                    number_ref = "8";
+                                } else if (n == 8) {
+                                    number_name = "Nine";
+                                    number_ref = "9";
+                                } else if (n == 9) {
+                                    number_name = "Ten";
+                                    number_ref = "10";
+                                } else if (n == 10) {
+                                    number_name = "Jack";
+                                    number_ref = "j";
+                                } else if (n == 11) {
+                                    number_name = "Queen";
+                                    number_ref = "q";
+                                } else {
+                                    number_name = "King";
+                                    number_ref = "k";
+                                }
+
+                                // Create, Name, and Push the 52 standard Card objects to this.cards;
+                                let unicode = this.unicode_base + this.suites[s] + this.numbers[n];
+                                let card_name = number_name + " of " + suite_name;
+                                let card_ref = suite_ref + number_ref;
+                                // Card(name, unicode, number, suite, ref)
+                                this.cards.push(new Card(card_name, unicode, number_name, suite_name, card_ref));
+                            }
+                        }
+                        return this;
+                    }
+
+                    // DONE - this sets this.cards to empty list;
+                    reset() {
+                        // clear all cards in deck;
+                        this.cards = [];
+                        return this;
+                    }
+
+                    // DONE - this picks a random card, and removes it, from this.cards
+                    dealRandom() {
+                        let i = Math.floor(Math.random() * this.cards.length);
+                        let dealThisCard = this.cards[i];
+                        console.log("dealt card #" + i + ": ");
+                        console.log(dealThisCard);
+                        this.cards.splice(i, 1);
+                        return dealThisCard;
+                    }
+                }
+                
+                class Player {
+                    constructor(name) {
+                        this.name = name;
+                        this.hand = [];
+                    }
+
+                    // deal a random card from passed deck, add to this.hand;
+                    takeCard(deck) {
+                        this.hand.push(deck.dealRandom());
+                        return this;
+                    }
+
+                    // remove passed card from this.hand;
+                    discard(card_ref_string) {
+                        for (let i = 0; i < this.hand.length; i++) {
+                            if (this.hand[i]['ref'] == card_ref_string) {
+                                this.hand.splice(i, 1);
+                                return this;
+                            }
+                        }
+                        console.log("you don't have this card in your hand");
+                        return this;
+                    }
+
+                    // DONE - prints the player's current this.hand;
+                    printHand() {
+                        let print_string = this.name + "'s hand: ";
+                        for (let i = 0; i < this.hand.length; i++) {
+                            if (i != this.hand.length - 1) {
+                                print_string += this.hand[i]['ref'] + " | ";    
+                            } else {
+                                print_string += this.hand[i]['ref'];
+                            }
+                        }
+                        console.log(print_string);
+                    }
+                }
+
+
+                // const test = new Deck(1);
+                // test.shuffle();
+                // const jahn = new Player("johnahnz0rs");
+                // jahn.takeCard(test).takeCard(test).takeCard(test).takeCard(test).takeCard(test).printHand();
+
+            </script>
+
+        </div>
+    </body>
+</html>
+
+
+
+

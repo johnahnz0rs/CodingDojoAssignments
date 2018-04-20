@@ -1,0 +1,57 @@
+<html lang="en">
+    <head>
+    	<meta charset="UTF-8">
+    	<meta name="description" content="johnahnz0rs > Coding Dojo > MEAN > JS Fundamentals > JS Scroll">
+        <title>JavaScript Demo: Scroll</title>
+        <style>
+            body {
+                background-color: black;
+                font-family: monospace;
+                color: white;
+                font-size: 50px;
+                text-align: center;
+                margin-top: 20%;
+            }
+            #magic {
+                color: #777;
+                border-right: 1px solid #777;
+                padding-right: 7px;
+                display: inline;
+            }
+        </style>
+    </head>
+
+    <body>
+        Coding is <div id="magic"></div>
+        <script>
+            var words = ["a lot of fun", "about not giving up", "challenging and empowering", "creative expression", "what I learned at CodingDojo"],
+                el = document.getElementById('magic'),
+                word_counter = 0,
+                character_counter = 0;
+
+            function updateText() {
+                let character = words[word_counter][character_counter++];
+                if (character == " ") {
+                    character = "&nbsp;";
+                }
+                el.innerHTML = el.innerHTML + character;
+                if (character_counter == words[word_counter].length + 1) {
+                    word_counter++;
+                    character_counter = 0;
+                    el.innerHTML = "";
+                    if (word_counter == words.length) {
+                        word_counter = 0;
+                    }
+                }
+            }
+
+            setInterval(updateText, 300);
+        </script>
+
+    </body>
+
+</html>
+
+
+
+

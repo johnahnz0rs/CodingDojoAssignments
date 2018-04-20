@@ -1,0 +1,82 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="johnahnz0rs > Coding Dojo > MEAN > JS OOP > Ninja Class 3">
+        <title>Ninja Class 3</title>
+        <style>
+            * {
+                font-family: helvetica, trebuchet, 'sans serif';
+            }
+            .wrapper {
+                width: 960px;
+                margin: 20px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h3>lol johnahnz0rs is l33t</h3>
+
+            <script>
+            	// Part 1
+            	class Ninja {
+            		constructor(name) {
+            			this.name = name;
+            			this.health = 100;
+            			this.speed = 3;
+            			this.strength = 3;
+            		}
+
+            		sayName() {
+            			console.log(this.name);
+            			return this;
+            		}
+
+            		showStats() {
+            			console.log(`Name: ${this.name}, Health: ${this.health}, Speed: ${this.speed}, Strength: ${this.strength}`);
+            			return this;
+            		}
+
+            		drinkSake() {
+            			this.health += 10;
+            			return this;
+            		}
+            	}
+
+            	
+            	
+            	// Part 2 - Sensei Class
+            	class Sensei extends Ninja {
+            		constructor(name) {
+            			super(name);
+            			this.health = 200;
+            			this.speed = 10;
+            			this.strength = 10;
+            			this.wisdom = 10;
+            		}
+
+            		speakWisdom() {
+            			super.drinkSake();
+            			console.log("Man who chases two rabbits catches none.");
+            			return this;
+            		}
+
+            		showStats() {
+            			console.log(`Name: ${this.name}, Health: ${this.health}, Speed: ${this.speed}, Strength: ${this.strength}, Wisdom: ${this.wisdom}`);
+            			return this;
+            		}
+            	}
+
+            	const jahn = new Ninja('johnahnz0rs');
+            	jahn.showStats().drinkSake().showStats();
+            	const dlxiv = new Sensei("His Holiness the Dalai Lama XIV");
+            	dlxiv.showStats().drinkSake().showStats();
+            </script>
+
+        </div>
+    </body>
+</html>
+
+
+
+

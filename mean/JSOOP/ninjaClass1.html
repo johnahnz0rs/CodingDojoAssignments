@@ -1,0 +1,55 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="johnahnz0rs > Coding Dojo > MEAN > JS OOP > Ninja Class 1">
+        <title>Ninja Class 1</title>
+        <style>
+            * {
+                font-family: helvetica, trebuchet, 'sans serif';
+            }
+            .wrapper {
+                width: 960px;
+                margin: 20px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h3>lol johnahnz0rs is l33t</h3>
+            <script>
+                function Ninja(name) {
+                    this.name = name;
+                    this.health = 100;
+                    let speed = 3;
+                    let strength = 3;
+
+                    this.sayName = function() {
+                        console.log(this.name);
+                        return this;
+                    }
+
+                    this.showStats = function() {
+                        show_speed = speed;
+                        show_strength = strength;
+                        console.log("Name: " + this.name + ", Health: " + this.health + ", Speed: " + speed + ", Strength: " + strength);
+                        return this;
+                    }
+
+                    this.drinkSake = function() {
+                        this.health += 10;
+                        return this;
+                    }
+                }
+
+                const jahn = new Ninja("johnahnz0rs");
+                jahn.sayName()
+                jahn.showStats()
+            </script>
+
+        </div>
+    </body>
+</html>
+
+
+
+

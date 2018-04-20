@@ -1,0 +1,43 @@
+/** {
+	font-family: trebuchet, helvetica, 'sans-serif';
+}*/
+
+/*.wrapper {
+	width: 970px;
+	margin: 20px auto;
+}*/
+
+.poke-img {
+	background-color: purple;
+	display: inline-block;
+	width: 700px;
+	margin: auto;
+	padding: 10px;
+	vertical-align: top;
+}
+
+	img {
+		vertical-align: top;
+		padding: 5px;
+		border: 2px;
+	}
+
+.info {
+	display: inline-block;
+	border: 10px solid red;
+	width: 200px;
+	height: 420px;
+	padding: 10px;
+}
+
+
+	.info h2 {
+		text-align: center;
+		margin: auto;
+	}
+	.info img {
+		margin: auto;
+	}
+	.info ul {
+		margin: 10px auto;
+	}

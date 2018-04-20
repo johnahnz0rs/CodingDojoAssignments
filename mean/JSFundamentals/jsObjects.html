@@ -1,0 +1,79 @@
+<html lang="en">
+    <head>
+    	<meta charset="UTF-8">
+    	<meta name="description" content="johnahnz0rs > Coding Dojo > MEAN > JS Fundamentals > JS Objects">
+        <title>JavaScript Objects</title>
+        <style>
+            * {
+                font-family: helvetica, trebuchet, 'sans serif';
+            }
+            .wrapper {
+                width: 960px;
+                margin: 20px auto;
+            }
+            td {
+                border: 1px solid silver;
+                text-align: center;
+                width: 40px;
+                height: 40px;
+            }
+            td:first-child, tr:first-child {
+                background-color: silver;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>johnahnz0rs is l33t</h1>
+            <!-- Challenge 1 - Print all of the students and their cohort. -->
+            <script>
+                console.log("Challenge 1")
+                let students = [
+                    {name: "Remy", cohort: "Jan"},
+                    {name: "Genevieve", cohort: "March"},
+                    {name: "Chuck", cohort: "Jan"},
+                    {name: "Osmund", cohort: "June"},
+                    {name: "Nikki", cohort: "June"},
+                    {name: "Boris", cohort: "June"}
+                ];
+                for (let i = 0; i < students.length; i++) {
+                    print_string = "Name: " + students[i].name + ", Cohort: " + students[i].cohort;
+                    console.log(print_string);
+                }
+            </script>
+
+
+            <!-- Challenge 2 - Print out the below object to match the example. -->
+            <script>
+                console.log('**************')
+                console.log("Challenge 2")
+                let users = {
+                    employees: [
+                        {"first_name": "Miguel", "last_name": "Jones"},
+                        {"first_name": "Ernie", "last_name": "Bertson"},
+                        {"first_name": "Nora", "last_name": "Lu"},
+                        {"first_name": "Sally", "last_name": "Barkyoumb"}
+                    ],
+                    managers: [
+                        {"first_name": "Lillian", "last_name": "Chambers"},
+                        {"first_name": "Gordon", "last_name": "Poe"}
+                    ]
+                };
+
+                for (let group in users) {
+                    console.log(group.toUpperCase());
+                    for (let i = 0; i < users[group].length; i++) {
+                        console.log((i+1).toString() + " - " + users[group][i]['last_name'].toUpperCase() + ", " + users[group][i]['first_name'].toUpperCase() + " - " + (users[group][i]['last_name'].length + users[group][i]['first_name'].length).toString());
+                    }
+                }
+
+            </script>
+
+        </div>
+    </body>
+</html>
+
+
+
+

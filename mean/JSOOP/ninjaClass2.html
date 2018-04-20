@@ -1,0 +1,84 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="johnahnz0rs > Coding Dojo > MEAN > JS OOP > Ninja Class 2">
+        <title>Ninja Class 2</title>
+        <style>
+            * {
+                font-family: helvetica, trebuchet, 'sans serif';
+            }
+            .wrapper {
+                width: 960px;
+                margin: 20px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h3>lol johnahnz0rs is l33t</h3>
+            <script>
+                function Ninja(name) {
+                    this.name = name;
+                    this.health = 100;
+                    let speed = 3;
+                    let strength = 3;
+
+                    this.sayName = function() {
+                        console.log(this.name);
+                        return this;
+                    }
+
+                    this.showStats = function() {
+                        console.log("Name: " + this.name + ", Health: " + this.health + ", Speed: " + speed + ", Strength: " + strength);
+                        return this;
+                    }
+
+                    this.drinkSake = function() {
+                        this.health += 10;
+                        return this;
+                    }
+
+                    this.ninjaStrength = function() {
+                        return strength;
+                    }
+                }
+
+                Ninja.prototype.punch = function(victim) {
+                    if (this instanceof Ninja && victim instanceof Ninja) {
+                        victim.health -= 5;
+                        console.log(victim.name + " was punched by " + this.name + " and lost 5 Health like a bitch!");
+                        return this;
+                    }
+                    console.log(victim + " is not a ninja");
+                    return this;
+                }
+
+                Ninja.prototype.kick = function(victim) {
+                    if (this instanceof Ninja && victim instanceof Ninja) {
+                        let damage = 15 * this.ninjaStrength();
+                        victim.health -= damage;
+                        console.log(victim.name + " was kicked by " + this.name + " and lost " + damage + " Health!");
+                        return this;
+                    }
+                    console.log(victim + " is not a ninja");
+                    return this;
+                }
+
+
+                const jahn = new Ninja("johnahnz0rs");
+                const hitler = new Ninja("Adolf Hitler");
+                const lol = ['lol'];
+                jahn.punch(hitler)
+                jahn.kick(hitler)
+                jahn.punch(lol)
+                jahn.kick(lol)
+                lol.punch(jahn)
+            </script>
+
+        </div>
+    </body>
+</html>
+
+
+
+
