@@ -1,0 +1,37 @@
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="johnahnz0rs > coding dojo > mean > express.js > Quoting Dojo">
+		<link rel="stylesheet" href="bootstrap.css">
+		<link rel="shortcut icon" href="favicon.ico">
+		<script src="jquery.min.js"></script>
+		<title>Quoting Dojo: Quotes</title>
+		<style>
+			.container { width: 970px; margin: 40px auto; }
+			.each_quote { margin: 40px auto; }
+			.quote_text { font-size: 25px; font-weight: bold; }
+            .header { font-size: 35px; font-weight: bold; }
+            .pull-right { float: right !important; margin-left: 200px; }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+            <div class="nav">
+                <span class="header">Quotes</span> <span class="pull-right"><a href="/">Home</a></span>
+            </div>
+
+
+			<% for (const quote of quotes) { %>
+				<div class="each_quote">
+					<span class="quote_text">"<%= quote.quote %>"</span>
+					<br>- <%= quote.name %>
+					<p><a href="/delete/<%= quote._id %>">Delete this quote</a></p>
+				</div>
+			<% } %>
+
+
+
+		</div>
+	</body>
+</html>

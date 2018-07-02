@@ -1,0 +1,69 @@
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="johnahnz0rs > coding dojo > mean > express.js > Epic Button Game">
+		<link rel="stylesheet" href="bootstrap.css">
+		<link rel="shortcut icon" href="favicon.ico">
+		<script src="jquery.min.js"></script>
+		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+		<title>Epic Button Game</title>
+		<style>
+			.container { text-align: center !important; width: 960px; margin-top: 40px; }
+
+			#epic { background-color: royalblue; color: white; width: 300px; height: 80px; border-radius: 15px; border: 3px solid black; }
+
+			#reset { float: right; background-color: red; color: white; margin-top: 100px; }
+
+			#da_count { margin-bottom: 40px;}
+
+		</style>
+
+		<script>
+			$(document).ready(function() {
+				// jquery here;
+				var socket = io.connect();
+				socket.emit('start');
+				function update_count(data) {
+					$('#da_count').html(`<h1>The button has been pushed ${data.count} times</h1>`);
+				};
+
+
+				socket.on('update', function(data) {
+					// console.log(data);
+					update_count(data);
+				});
+
+				$('#epic').click(function() {
+					socket.emit('epic');
+					// console.log('lol epic');
+				});
+
+				$('#reset').click(function() {
+					socket.emit('reset');
+					// console.log('rofl reset');
+				});
+
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div id="da_count">
+				
+			</div>
+
+			<div>
+				<p>Push the button to update the count</p>
+				<p>
+					<button id="epic">Push the epic button</button>
+				</p>
+			</div>
+			<div>
+				<button id="reset">Reset count</button>
+			</div>
+
+
+		</div>
+	</body>
+</html>

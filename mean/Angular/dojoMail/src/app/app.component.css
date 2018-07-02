@@ -1,0 +1,12 @@
+.container {
+    width: 970px;
+    margin: 0 auto;
+    font-family: helvetica, "sans-serif";
+}
+thead th {
+    text-align: left;
+    padding: 2px 5px;
+}
+tbody td {
+    padding: 2px 5px;
+}

@@ -1,0 +1,50 @@
+<div class="player-detail">
+
+  <table class="table">
+      <tbody>
+          <tr>
+              <td>_id</td>
+              <td>{{ player._id }}</td>
+          </tr>
+          <tr>
+              <td>name</td>
+              <td>{{ player.name }}</td>
+          </tr>
+          <tr>
+              <td>preferred position</td>
+              <td>{{ player.position }}</td>
+          </tr>
+          <tr>
+              <td>game1</td>
+              <td>
+                  <span *ngIf="player.game1 === 'playing'" class="green">Playing</span>
+                  <span *ngIf="player.game1 === 'not-playing'" class="red">Not Playing</span>
+                  <span *ngIf="player.game1 !== 'playing' && 'not-playing'" class="yellow">Undecided</span>
+              </td>
+          </tr>
+          <tr>
+              <td>game2</td>
+              <td>
+                  <span *ngIf="player.game2 === 'playing'" class="green">Playing</span>
+                  <span *ngIf="player.game2 === 'not-playing'" class="red">Not Playing</span>
+                  <span *ngIf="player.game2 !== 'playing' && 'not-playing'" class="yellow">Undecided</span>
+              </td>
+          </tr>
+          <tr>
+              <td>game3</td>
+              <td>
+                  <span *ngIf="player.game3 === 'playing'" class="green">Playing</span>
+                  <span *ngIf="player.game3 === 'not-playing'" class="red">Not Playing</span>
+                  <span *ngIf="player.game3 !== 'playing' && 'not-playing'" class="yellow">Undecided</span>
+              </td>
+          </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><a [routerLink]="['/']"><button class="btn btn-sm btn-primary">Back</button></a></td>
+        </tr>
+      </tbody>
+  </table>
+
+
+
+</div>

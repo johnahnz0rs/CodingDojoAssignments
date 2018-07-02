@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="johnahnz0rs > coding dojo > mean > express.js > Mongoose Dashboard">
+		<link rel="stylesheet" href="/bootstrap.css">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<script src="/jquery.min.js"></script>
+		
+		<title>Mongoose Dashboard</title>
+		<style>
+			.container { margin: 40px auto; }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>#doggos</h1>
+
+			<div>
+				<% if (dogs) { %>
+					<p>Click pupper's name to edit</p>
+					<ul>
+						<% for (var i in dogs) { %>
+							<li><a href="dogs/<%= dogs[i]._id %>"><%= dogs[i].name %></a>, <%= dogs[i].age %> year(s) old ... <% if (dogs[i].good_boy == 'yes') { %> Good boy! <% } else { %> Bad Dog! <% } %></li>
+
+						<% } %>
+					</ul>
+				<% } %>
+			</div>
+
+			<p><a href="/new">Add a new dog</a></p>
+
+		</div>
+	</body>
+</html>

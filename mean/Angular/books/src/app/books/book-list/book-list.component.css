@@ -1,0 +1,21 @@
+#books-list {
+    width: 970px;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+
+#new-button {
+    vertical-align: top;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: blue;
+    color: white;
+}
+
+h2 {
+    vertical-align: top;
+    display: inline-block;
+    margin-bottom: 50px;
+}

@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>GitHub Score</h1>
+
+    <div class="my-form">
+        <form (submit)="getScore(username)" method="get">
+            <label for="username">Github Username: </label>
+            <input type="text" id="username" name="username" required minlength="1" [(ngModel)]="user.username" #username="ngModel">
+            <br>
+            <input disabled *ngIf="!username.valid" type="submit" value="Calculate my Github Score">
+            <input type="submit" value="Calculate my Github Score" *ngIf="username.valid">
+
+        </form>
+
+    </div>
+
+    <div class="score">
+        <h3>Your Score: {{score}}</h3>
+        <p>{{message}}</p>
+    </div>
+
+
+</div>

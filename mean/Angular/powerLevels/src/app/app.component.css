@@ -1,0 +1,29 @@
+.container {
+    width: 970px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid black;
+    font-family: tahoma, geneva, "sans-serif";
+}
+
+.header {
+    text-decoration: underline;
+}
+
+.form {
+    margin: 20px auto;
+}
+
+.form-spacer {
+    margin-left: 20px;
+}
+
+.submit {
+    padding: 3px 30px;
+    border: 1px solid black;
+}
+
+.levels {
+    margin-top: 80px;
+}
+

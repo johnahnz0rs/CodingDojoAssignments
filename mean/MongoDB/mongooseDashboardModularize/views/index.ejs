@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="johnahnz0rs > coding dojo > mean > express.js > Mongoose Dashboard">
+		<link rel="stylesheet" href="/bootstrap.css">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<script src="/jquery.min.js"></script>
+		
+		<title>Mongoose Dashboard</title>
+		<style>
+			.container { width: 970px; margin: 40px auto; }
+			table {margin: 20px; }
+			thead td {font-weight: bold;}
+			td { height: 30px; width: 160px; padding: 10px 20px;  }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>#doggos</h1>
+			<p>Click pupper's name to edit</p>
+
+			<% if (dogs) { %>
+				<table>
+					<thead>
+						<tr>
+							<td>Name</td>
+							<td>Age</td>
+							<td>Good Boy?</td>
+						</tr>
+					</thead>
+					<tbody>
+						<% for (var i in dogs) { %>
+							<tr>
+								<td><a href="dogs/<%= dogs[i]._id %>"><%= dogs[i].name %></a></td>
+								<td><%= dogs[i].age %> year(s) old</td>
+								<td>
+									<% if (dogs[i].good_boy == 'yes') { %>
+										Good boy!
+									<% } else { %>
+										Bad Dog!
+									<% } %>
+								</td>
+							</tr>
+						<% } %>
+					</tbody>
+				</table>
+			<% } %>
+
+			<p><a href="/new">Add a new dog</a></p>
+
+		</div>
+	</body>
+</html>

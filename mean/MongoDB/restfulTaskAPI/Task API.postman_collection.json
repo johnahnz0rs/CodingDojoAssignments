@@ -1,0 +1,128 @@
+{
+	"id": "c5236318-ad97-556e-9c4c-22ad23ed3aaf",
+	"name": "Task API",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": null,
+	"order": [
+		"67269a42-c1c9-4df8-9483-1752887e93a6",
+		"9471a9c8-2632-4af4-c6da-459e20023c44",
+		"7d200ab1-ee97-ba32-4033-42283d7d5ece",
+		"88672716-1a45-4b17-a9a2-61ebf740bb4c",
+		"6a0e4a71-bc9e-44e4-b426-b726ead81bf2"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "67269a42-c1c9-4df8-9483-1752887e93a6",
+			"name": "localhost:1337/tasks",
+			"url": "localhost:1337/tasks",
+			"description": "this is app.get('/tasks')",
+			"data": [],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "6a0e4a71-bc9e-44e4-b426-b726ead81bf2",
+			"name": "localhost:1337/tasks/5af8cbb85b198f03331dfc30",
+			"url": "localhost:1337/tasks/5af8cbb85b198f03331dfc30",
+			"description": "this is app.delete('/tasks/:id')",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "7d200ab1-ee97-ba32-4033-42283d7d5ece",
+			"name": "localhost:1337/tasks/",
+			"url": "localhost:1337/tasks",
+			"description": "this is app.post('/tasks')",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"rawModeData": "{\n  \"title\": \"laundry\",\n  \"description\": \"i've been wearing the same underwear for 3 days\"\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "88672716-1a45-4b17-a9a2-61ebf740bb4c",
+			"name": "localhost:1337/tasks/5af8cbb85b198f03331dfc30",
+			"url": "localhost:1337/tasks/5af8cbb85b198f03331dfc30",
+			"description": "this is app.put('/tasks/:id')",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c35a932d-76b3-45bd-ae6c-537de9e0173a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"folder": null,
+			"rawModeData": "{\n\t\"title\": \"do your laundry\",\n\t\"description\": \"stop febrezing your clothes and wash them already\"\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "9471a9c8-2632-4af4-c6da-459e20023c44",
+			"name": "localhost:1337/tasks/5af81409cab90a0b6b4a34b3",
+			"url": "localhost:1337/tasks/5af81409cab90a0b6b4a34b3",
+			"description": "this is app.get('/tasks/:id')",
+			"data": [],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		}
+	]
+}

@@ -1,0 +1,10 @@
+<p>Component 1</p>
+<!--<ul>-->
+    <!--<li *ngFor="let building of buildings">{{ building.building }} and {{ building.text }}</li>-->
+<!--</ul>-->
+
+<div class="building" *ngFor="let building of buildings">
+    <p>{{building.building}}</p>
+    <p>{{building.text}}</p>
+    <button (click)="myMethod(building.building)">{{building.building}}!</button>
+</div>

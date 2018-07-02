@@ -1,0 +1,18 @@
+.container {
+    width: 970px;
+    margin: 20px auto;
+}
+
+.gold-count {
+    width: 300px;
+    border: 1px solid black;
+    margin: auto;
+}
+
+.buildings {
+    border: 1px solid black;
+}
+
+.activity {
+    border: 1px solid black;
+}

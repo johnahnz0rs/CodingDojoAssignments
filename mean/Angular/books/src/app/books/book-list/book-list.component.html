@@ -1,0 +1,49 @@
+<!--<app-book-new (createBook)="onCreate($event)"></app-book-new>-->
+
+<section class="scheduler-border" id="books-list">
+    <h2>Books List</h2>
+    <a [routerLink]="['/books', 'new']">
+        <button id="new-button" class="float-right">Add New Book</button>
+    </a>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>
+                <input type="text" placeholder="ID" [(ngModel)]="filter.id">
+                <button class="clear" *ngIf="filter.id" (click)="filter.id = null">clear</button>
+            </th>
+            <th>
+                <input type="text" placeholder="Title" [(ngModel)]="filter.title">
+                <button class="clear" *ngIf="filter.title" (click)="filter.title = null">clear</button>
+            </th>
+            <th>
+                <input type="text" placeholder="Year" [(ngModel)]="filter.year">
+                <button class="clear" *ngIf="filter.year" (click)="filter.year = null">clear</button>
+            </th>
+            <th>
+                <input type="text" placeholder="Author" [(ngModel)]="filter.author">
+                <button class="clear" *ngIf="filter.author" (click)="filter.author = null">clear</button>
+            </th>
+            <th>
+                Actions
+                <button class="clear" *ngIf="filter.id || filter.title || filter.year || filter.author" (click)="clearFilter()">clear all</button>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let book of books | search:filter" (click)="selectBook(book)" [routerLink]="[book.id]">
+            <td>{{ book?._id }}</td>
+            <td>{{ book?.title | titleize }}</td>
+            <td>{{ book?.year }}</td>
+            <td>{{ book?.author | titleize }}</td>
+            <td (click)="onClick($event)">
+                <button class="btn btn-danger" (click)="onDelete(book.id)">Delete</button>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+</section>
+
+
+<app-book-detail *ngIf="selectedBook" [book]="selectedBook"></app-book-detail>

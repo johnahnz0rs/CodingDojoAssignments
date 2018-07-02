@@ -1,0 +1,186 @@
+<!--suppress XmlInvalidId -->
+<div class="container">
+    <h1>Registration</h1>
+
+    <div class="success" *ngIf="success_message">
+        <p>Thank you for registering with us, {{newUser.firstName}}. We just sent you a confirmation email at
+            {{newUser.email}}, and we will send all mail to {{newUser.street}}<span *ngIf="newUser.unit"> {{newUser.unit}}</span>, {{newUser.city}}, {{newUser.state}}.</p>
+        <p>Have a wonderful day!</p>
+    </div>
+
+    <div class="reg-form">
+        <h3>Account Information</h3>
+        <form (submit)="onSubmit()" id="registration">
+            <table>
+                <!--firstName-->
+                <tr>
+                    <td class="col_1">
+                        <label for="firstName">*First Name:</label>
+                    </td>
+                    <td class="col_2">
+                        <input type="text" id="firstName" name="firstName" [(ngModel)]="user.firstName" required
+                        minlength="1"
+                               #firstName="ngModel">
+                    </td>
+                    <td class="col_3">
+                        <span class="error" *ngIf="!firstName.valid">First Name is required</span>
+                        <span class="success" *ngIf="firstName.valid">OK</span>
+                    </td>
+                </tr>
+
+                <!--lastName-->
+                <tr>
+                    <td class="col_1">
+                        <label for="lastName">*Last Name:</label>
+                    </td>
+                    <td class="col_2">
+                        <input type="text" id="lastName" name="lastName" [(ngModel)]="user.lastName" required
+                               minlength="1"
+                               #lastName="ngModel">
+                    </td>
+                    <td class="col_3">
+                        <span class="error" *ngIf="!lastName.valid">Last Name is required</span>
+                        <span class="success" *ngIf="lastName.valid">OK</span>
+                    </td>
+                </tr>
+
+                <!--email-->
+                <tr>
+                    <td class="col_1">
+                        <label for="email">*Email:</label>
+                    </td>
+                    <td class="col_2">
+                        <input type="email" id="email" name="email" [(ngModel)]="user.email" required minlength="1"
+                               #email="ngModel">
+                    </td>
+                    <td class="col_3">
+                        <span class="error" *ngIf="!email.valid">Email is required</span>
+                        <span class="success" *ngIf="email.valid">OK</span>
+                    </td>
+                </tr>
+
+                <!--password-->
+                <tr>
+                    <td class="col_1">
+                        <label for="password">*Password:</label>
+                    </td>
+                    <td class="col_2">
+                        <input type="password" id="password" name="password" id="password" [(ngModel)]="user.password"
+                               required
+                               minlength="8"
+                               #password="ngModel">
+                    </td>
+                    <td class="col_3">
+                        <span class="error" *ngIf="!password.valid">Password must be at least 8 characters</span>
+                        <span class="success" *ngIf="password.valid">OK</span>
+                    </td>
+                </tr>
+
+                <!--cPassword-->
+                <tr>
+                    <td class="col_1">
+                        <label for="cPassword">*Password Confirmation:</label>
+                    </td>
+                    <td class="col_2">
+                        <input type="password" id="cPassword" name="cPassword" [(ngModel)]="user.cPassword" required
+                               minlength="8"
+                               #cPassword="ngModel">
+                    </td>
+                    <td class="col_3">
+                        <span class="error" *ngIf="!cPassword.valid">Passwords must match</span>
+                        <span class="success" *ngIf="cPassword.valid">OK</span>
+                    </td>
+                </tr>
+
+                <!--street-->
+                <tr>
+                    <td class="col_1">
+                        <label for="street">*Street Address:</label>
+                    </td>
+                    <td class="col_2">
+                        <input type="text" id="street" name="street" [(ngModel)]="user.street" required minlength="1"
+                               #street="ngModel">
+                    </td>
+                    <td class="col_3">
+                        <span class="error" *ngIf="!street.valid">Street Address is required</span>
+                        <span class="success" *ngIf="street.valid">OK</span>
+                    </td>
+                </tr>
+
+                <!--unit-->
+                <tr>
+                    <td class="col_1">
+                        <label for="unit">Unit/Apt #:</label>
+                    </td>
+                    <td class="col_2">
+                        <input type="text" id="unit" name="unit" [(ngModel)]="user.unit">
+                    </td>
+                    <td class="col_3">
+                        &nbsp;
+                    </td>
+                </tr>
+
+                <!--city-->
+                <tr>
+                    <td class="col_1">
+                        <label for="city">*City:</label>
+                    </td>
+                    <td class="col_2">
+                        <input type="text" id="city" name="city" [(ngModel)]="user.city" required minlength="1"
+                               #city="ngModel">
+                    </td>
+                    <td class="col_3">
+                        <span class="error" *ngIf="!city.valid">City is required</span>
+                        <span class="success" *ngIf="city.valid">OK</span>
+                    </td>
+                </tr>
+
+                <!--state-->
+                <tr>
+                    <td class="col_1">
+                        <label for="state">*State:</label>
+                    </td>
+                    <td class="col_2">
+                        <select id="state" name="state" [(ngModel)]="user.state" required #state="ngModel">
+                            <option *ngFor="let state of states" value="{{state}}">{{state}}</option>
+                        </select>
+                    </td>
+                    <td class="col_3">
+                        <span class="error" *ngIf="!state.valid">State is required</span>
+                        <span class="success" *ngIf="state.valid">OK</span>
+                    </td>
+                </tr>
+
+                <!--lucky-->
+                <tr>
+                    <td class="col_1">
+                        <label for="lucky">*I'm feeling lucky:</label>
+                    </td>
+                    <td class="col_2">
+                        <span class="lucky">
+                            <input type="radio" id="lucky" name="lucky" value="yes" [(ngModel)]="user.lucky"
+                                   class="radio" required #lucky="ngModel">
+                            <label for="lucky">Yes</label>
+                        </span>
+                        <span class="lucky">
+                            <input type="radio" name="lucky" value="no" [(ngModel)]="user.lucky" class="radio">
+                            <label for="lucky">No</label>
+                        </span>
+                    </td>
+                    <td class="col_3">
+                        <span class="error" *ngIf="!lucky.valid">I'm Feeling Lucky is required</span>
+                        <span class="success" *ngIf="lucky.valid">OK</span>
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+
+    </div>
+    <button type="submit" form="registration" class="register">Register</button>
+
+
+    <p><button (click)="test()">test button</button></p>
+
+
+</div>

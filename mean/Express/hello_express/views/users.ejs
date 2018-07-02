@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="bootstrap.css">
+		<link rel="shortcut icon" href="favicon.ico">
+		<title>all users</title>
+		<style>
+			.container { margin-top: 30px; }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h2>Here are all the users:</h2>
+			<% for (var x in users) { %>
+				<h3>Name: <%= users[x].name %></h3>
+				<h4>Email: <%= users[x].email %></h4>
+				<hr>
+			<% } %>
+		</div>
+	</body>
+</html>

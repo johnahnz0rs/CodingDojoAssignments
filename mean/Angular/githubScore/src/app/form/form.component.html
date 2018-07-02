@@ -1,0 +1,6 @@
+<form (submit)="getScore($event)">
+    <label for="username">Github Username: </label>
+    <input type="text" id='username' name="username" required minlength="1" [(ngModel)]="user.username" #username="ngModel">
+    <button disabled *ngIf="!username.valid">Calculate my Github Score</button>
+    <button *ngIf="username.valid">Calculate my Github Score</button>
+</form>

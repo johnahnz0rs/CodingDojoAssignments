@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="johnahnz0rs > coding dojo > mean > express.js > survey form">
+		<link rel="stylesheet" href="bootstrap.css">
+		<link rel="shortcut icon" href="favicon.ico">
+		<script src="jquery.min.js"></script>
+		<title>Survey Form</title>
+		<style>
+			.lol { width: 500px; height: 400px; margin: 50px auto; border: 1px solid black; padding: 20px;}
+			.left-col { width: 170px;}
+			.right-col { width: 250px; }
+			.table th, .table td { 
+			    border-top: none !important; 
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class='table-responsive lol'>
+				<form action='/result' method='post'>
+					<table class='table'>
+						<tr>
+							<td class='left-col'>Your Name:</td>
+							<td><input type='text' name='name' class='right-col'></td>
+						</tr>
+						<tr>
+							<td class='left-col'>Dojo Location:</td>
+							<td>
+								<select name='dojo' class='right-col'>
+									<option value='Remote Online' selected>Remote Online</option>
+									<option value='Burbank'>Burbank</option>
+									<option value='Seattle'>Seattle</option>
+									<option value='Your Butt'>Your Butt</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class='left-col'>Favorite Language:</td>
+							<td>
+								<select name='language' class='right-col'>
+									<option value='JavaScript' selected>JavaScript</option>
+									<option value='HTML/CSS'>HTML/CSS</option>
+									<option value='Python'>Python</option>
+									<option value='Klingon'>Klingon</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td colspan='2'>
+								Comment (optional)<br>
+								<textarea name='comment' rows='3' cols='50'></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td colspan='2'>
+								<input type='submit' value='Submit' class='float-right'>
+							</td>
+						</tr>
+					</table>
+
+				</form>
+			</div>
+
+
+
+
+
+
+		</div>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<div class="player-new">
+
+    <div id="header">
+        <a [routerLink]="['/']"><h2 class="header-links">List</h2></a>
+        <h2 class="header-links">|</h2>
+        <a [routerLink]="['/players', 'addplayer']"><h2 class="header-links">Add Player</h2></a>
+    </div>
+
+
+    <div class="form">
+        <h4>Add Player</h4>
+
+
+
+        <form #newPlayerForm="ngForm">
+
+            <p>{{ newPlayerForm.value | json }}</p>
+            <input type="hidden" name="game1" value="undecided" [(ngModel)]="newPlayer.game1" #game1="ngModel">
+            <input type="hidden" name="game2" value="undecided" [(ngModel)]="newPlayer.game2" #game2="ngModel">
+            <input type="hidden" name="game3" value="undecided" [(ngModel)]="newPlayer.game3" #game3="ngModel">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td><label for="name">Player Name:</label></td>
+                        <td>
+                            <input type="text" required minlength="2" id="name" name="name" [(ngModel)]="newPlayer.name" #name="ngModel">
+                            <br>
+                            <span *ngIf="!name.valid" class="red">* Name must be<br>at least <span class="underline">2</span> characters<br>in length</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="position">Preferred Position:</label></td>
+                        <td>
+                            <input type="text" id="position" name="position" [(ngModel)]="newPlayer.position" #position="ngModel">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <a [routerLink]="['/']"><button class="btn btn-sm btn-primary button" role="button">Cancel</button></a>
+                            <button *ngIf="!newPlayerForm.valid" class="btn btn-sm btn-outline-secondary button" disabled="disabled">ADD</button>
+                            <button *ngIf="newPlayerForm.valid" class="btn btn-sm btn-success button" (click)="addOnePlayer()">ADD</button>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+
+
+
+            </table>
+
+        </form>
+
+    </div>
+
+</div>

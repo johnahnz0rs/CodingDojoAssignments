@@ -1,0 +1,23 @@
+<div class="container">
+    <span class="header">Power</span>
+
+    <div class="form">
+        <form (submit)="submitPower(power)">
+            <label>Initial Power Level:</label>
+            <span class="form-spacer">
+                <select name="power" id="power" [(ngModel)]="powerLevel" required #power="ngModel">
+                <option *ngFor="let i of powers" value="{{i}}">{{i}}</option>
+                </select>
+            </span>
+            <span class="form-spacer">
+                <input type="submit" class="submit" value="Calculate Powers">
+            </span>
+        </form>
+    </div>
+
+
+    <div class="levels">
+        <app-multiplier [powerLevel]="powerLevel"></app-multiplier>
+    </div>
+
+</div>

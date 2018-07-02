@@ -1,0 +1,47 @@
+<div class="container">
+
+    <div class="add-quote">
+        <h1>Add a Quote</h1>
+        <table>
+            <tr>
+                <td class="col1">
+                    <form (submit)="addQuote(quote, author)">
+                        <textarea rows="4" cols="50" name="quote" id="quote" [(ngModel)]="newQuote.quote" required minlength="4" #quote="ngModel"></textarea>
+                        <label for="author" class="author-label">Author: </label><input type="text" name="author" id="author" [(ngModel)]="newQuote.author" required minlength="1" #author="ngModel">
+                        <input *ngIf="!author.valid || !quote.valid" class="submit-button" type="submit" value="Add Quote" disabled>
+                        <input *ngIf="author.valid && quote.valid" class="submit-button" type="submit" value="Add Quote">
+                    </form>
+                </td>
+
+                <td class="col2">
+                    <p class="error" *ngIf="!quote.valid">Quote is required.</p>
+                    <p class="error" *ngIf="!author.valid">Author is required.</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="quotes-list">
+        <h1>Quotes List</h1>
+        <div class="quote-single" *ngFor="let quote of quotes">
+            <div class="quote">
+                <p class="quote-quote">{{quote.quote}}</p>
+                <p class="quote-author">- {{quote.author}}</p>
+            </div>
+            <div class="votes">
+                <!--{{quote._id}}-->
+                <button #wowow value="{{quote._id}}"(click)="voteUp()">Vote Up</button>
+                <p>{{wowow.value}}</p>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <span [ngClass]="{ 'on': switch }">I should be yellow.</span>
+
+
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+  <!--<p class="bold" [ngClass]="{'active': 'green', 'inactive': 'red', 'undecided': 'blue'}[gameStatus]">Test </p>-->
+    <!--{{gameStatus}}-->
+
+    <div id="header">
+        <a [routerLink]="['/players']"><h3 class="header-links">Manage Players</h3></a>
+        <h3 class="header-links header-pipe">|</h3>
+        <a [routerLink]="['/status']"><h3 class="header-links">Manage Player Status</h3></a>
+    </div>
+
+    <router-outlet></router-outlet>
+
+</div>

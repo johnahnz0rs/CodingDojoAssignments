@@ -1,0 +1,18 @@
+.container {
+    width: 970px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.buttons {
+    margin: 20px auto;
+}
+
+.button {
+    margin: 0 20px;
+    padding: 20px;
+}
+
+.highlight {
+    background-color: yellow;
+}

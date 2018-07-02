@@ -1,0 +1,22 @@
+.container {
+    width: 970px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.switch {
+    height: 50px;
+    width: 50px;
+    border: 10px solid brown;
+    display: inline-block;
+    margin: 1px;
+}
+
+.on {
+    background-color: green;
+    color: white;
+}
+.off {
+    background-color: red;
+    color: white;
+}

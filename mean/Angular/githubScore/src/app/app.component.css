@@ -1,0 +1,35 @@
+.container {
+    width: 970px;
+    margin: 20px auto;
+}
+
+.my-form {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 40px;
+}
+
+.score {
+    display: inline-block;
+    vertical-align: top;
+}
+
+button {
+    display: block;
+}
+
+.red {
+    color: red;
+}
+.orange {
+    color: orange;
+}
+.black {
+    color: black;
+}
+.green {
+    color: green;
+}
+.blue {
+    color: blue;
+}

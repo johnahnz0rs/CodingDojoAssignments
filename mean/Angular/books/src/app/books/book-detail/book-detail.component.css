@@ -1,0 +1,12 @@
+
+#book-detail {
+    width: 970px;
+    border: 1px solid black;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.red {
+    color: red;
+    font-weight: bold;
+}

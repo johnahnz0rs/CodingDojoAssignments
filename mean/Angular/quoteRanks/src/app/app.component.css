@@ -1,0 +1,70 @@
+.container {
+    width: 970px;
+    margin: 20px auto;
+    font-family: trebuchet, helvetica, "sans-serif";
+}
+
+.col1 {
+    width: 70%;
+    text-align: right;
+}
+    #quote {
+        width: 100%;
+        text-align: right;
+    }
+    .author-label {
+        margin-top: 23px;
+    }
+    #author {
+        margin-top: 20px;
+        width: 60%;
+        float: right;
+    }
+    .submit-button {
+        padding: 2px 10px;
+        margin-top: 20px;
+        margin-left: 80%;
+    }
+
+.col2 {
+    margin-left: 20px;
+    vertical-align: bottom;
+}
+
+
+.error {
+    color: red;
+    margin-left: 20px;
+}
+
+
+
+.quotes-list {
+    margin-top: 60px;
+}
+.quote-single {
+    border: 1px solid black;
+    margin: 10px;
+}
+.quote {
+    width: 60%;
+    display: inline-block;
+    vertical-align: top;
+}
+    .quote-quote {
+        padding: 10px 0 0 10px;
+    }
+    .quote-author {
+        float: right;
+    }
+.votes {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 30px;
+}
+
+
+
+.on {
+    background-color: yellow;
+}

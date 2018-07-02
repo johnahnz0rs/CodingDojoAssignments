@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="johnahnz0rs > coding dojo > mean > express.js > survey form">
+		<link rel="stylesheet" href="bootstrap.css">
+		<link rel="shortcut icon" href="favicon.ico">
+		<script src="jquery.min.js"></script>
+		<title>Survey Form</title>
+		<style>
+			.lol { width: 500px; height: 360px; margin: 50px auto; border: 1px solid black; padding: 20px;}
+			.left-col { width: 170px;}
+			.right-col { width: 250px; }
+			.table th, .table td { 
+			    border-top: none !important; 
+			}
+			table { padding: 20px; }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class='lol'>
+				<form action='/' method='get'>
+					<h3>Submitted Information</h3>
+					<table class='table'>
+						<% if (user_info) { %>
+						<tr>
+							<td class='left-col'>Name:</td>
+							<td><%= user_info.name %></td>
+						</tr>
+						<tr>
+							<td class='left-col'>Dojo Location:</td>
+							<td><%= user_info.dojo %></td>
+						</tr>
+						<tr>
+							<td class='left-col'>Favorite Language:</td>
+							<td><%= user_info.language %></td>
+						</tr>
+						<tr>
+							<td class='left-col'>Comment:</td>
+							<td><%= user_info.comment %></td>
+						</tr>
+						<tr>
+							<td colspan='2'>
+								<input type='submit' value='Go Back' class='float-right'>
+							</td>
+						</tr>
+						<% } %>
+					</table>
+
+				</form>
+			</div>
+
+
+
+
+
+
+		</div>
+	</body>
+</html>

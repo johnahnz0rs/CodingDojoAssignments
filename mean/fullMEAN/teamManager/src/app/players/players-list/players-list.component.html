@@ -1,0 +1,38 @@
+<div class="players-list">
+
+  <div id="header">
+      <a [routerLink]="['/']"><h2 class="header-links">List</h2></a>
+      <h2 class="header-links">|</h2>
+      <a [routerLink]="['/players', 'addplayer']"><h2 class="header-links">Add Player</h2></a>
+  </div>
+
+  <table class="table table-bordered">
+      <thead>
+        <tr>
+            <th>Player Name</th>
+            <th>Preferred Position</th>
+            <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let player of players">
+            <td>
+                <a [routerLink]="['/players', player._id]">{{ player.name }}</a>
+            </td>
+            <td>
+                {{ player.position }}
+            </td>
+            <td>
+                <button class="btn btn-md btn-danger" (click)="deletePlayer(player._id)">DELETE</button>
+            </td>
+        </tr>
+      </tbody>
+
+
+
+  </table>
+
+
+
+</div>

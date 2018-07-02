@@ -1,0 +1,48 @@
+<div class="games">
+
+    <h1>Player Status - Game {{gameNumber}}</h1>
+
+    <div class="games-link-div">
+        <ul class="inlineList">
+            <li><h3 class="game-link">Game 1</h3></li>
+            <!--<li><h3 class="game-link" (click)="redirectToTwo()">Game 2</h3></li>-->
+            <li><a [routerLink]="['/status', 'games', '2']"><h3 class="game-link">Game 2</h3></a></li>
+            <li><a [routerLink]="['/status', 'games', '3']"><h3 class="game-link-right">Game 3</h3></a></li>
+        </ul>
+    </div>
+
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Player Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let player of players">
+                <td>
+                    <a [routerLink]="['/players', player._id]">{{ player.name }}</a></td>
+                <td>
+                    <button *ngIf="player.game1 !== 'playing'" class="btn btn-sm status-button btn-outline-dark" (click)="choosePlaying(player)">Playing</button>
+                    <button *ngIf="player.game1 === 'playing'" class="btn btn-sm status-button playing">Playing</button>
+
+                    <button *ngIf="player.game1 !== 'not playing'" class="btn btn-sm status-button btn-outline-dark" (click)="chooseNotPlaying(player)">Not Playing</button>
+                    <button *ngIf="player.game1 === 'not playing'" class="btn btn-sm status-button not-playing">Not Playing</button>
+
+                    <button *ngIf="player.game1 === 'playing' || player.game1 === 'not playing'" class="btn btn-sm status-button btn-outline-dark" (click)="chooseUndecided(player)">Undecided</button>
+                    <button *ngIf="player.game1 !== 'playing' && player.game1 !== 'not playing'" class="btn btn-sm status-button undecided">Undecided</button>
+                </td>
+            </tr>
+
+
+        </tbody>
+
+
+
+    </table>
+
+
+
+</div>

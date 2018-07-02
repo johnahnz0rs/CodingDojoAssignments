@@ -1,0 +1,18 @@
+.container {
+    width: 970px;
+    margin: 0 auto;
+}
+.div-barcode {
+    width: 50px;
+    height: 50px;
+    border: 1px dotted black;
+}
+
+.event-bind {
+    margin-top: 40px;
+    padding: 20px;
+    width: 150px;
+    height: 20px;
+    text-align: center;
+
+}

@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="johnahnz0rs > coding dojo > mean > express.js > Dojo Secrets">
+        <link rel="stylesheet" href="/bootstrap.css">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <script src="/jquery.min.js"></script>
+
+        <title>Dojo Secrets</title>
+        <style>
+            .container { width: 970px; margin: 40px auto; }
+            .nav { margin-bottom: 40px; }
+
+            #this_secret {
+                border: 1px solid black;
+                border-radius: 10px;
+            }
+
+            #submit_comment {
+                background-color: dodgerblue;
+                color: white;
+                border-radius: 10px;
+                margin-top: 5px;
+                padding: 10px 20px;
+            }
+
+            td { padding-left: 20px; }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="nav">
+                <h1 class="nav_h1">Comment on this secret</h1>
+                <p class="pull-right"><a href="/secrets">Home</a> <a class="pull-right" href="/logout">Logout</a></p>
+            </div>
+
+
+
+            <div id="this_secret">
+
+                <% if (typeof session != 'undefined') { %>
+
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">SECRET: <%= session.this_secret.secret %></th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                            <% if (session.this_secret.comments.length < 1) { %>
+                                <tr>
+                                    <td>No comments yet</td>
+                                </tr>
+                            <% } else { %>
+                                <% for (let i = 0; i < session.this_secret.comments.length; i++) { %>
+                                    <tr>
+                                        <td><%= session.this_secret.comments[i] %></td>
+                                    </tr>
+                                <% } %>
+                            <% } %>
+                        <tr>
+                            <td>
+                                <form method="post" action="/comment">
+                                    <input type="hidden" name="secret_id" value="<%= session.this_secret._id %>">
+                                    <input type="text" name="comment" size="100" placeholder="Leave your comment here!">
+                                    <br>
+                                    <input type="submit" value="Submit" id="submit_comment">
+
+                                </form>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                <% } %>
+
+
+
+            </div>
+
+        </div>
+    </body>
+</html>

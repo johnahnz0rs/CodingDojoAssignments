@@ -1,0 +1,23 @@
+.players-list {
+    margin: 0 30px;
+    padding: 20px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+.header-links {
+    display: inline-block;
+    margin: 10px 0;
+}
+
+th {
+    background-color: gray;
+    color: white;
+}
+
+.table>tbody>tr:nth-child(odd)>td {
+    background-color: #ffffff;
+}
+.table>tbody>tr:nth-child(even)>td {
+    background-color: #dee2e6;
+}

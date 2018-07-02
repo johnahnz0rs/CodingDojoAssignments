@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="johnahnz0rs > coding dojo > mean > express.js > Mongoose Dashboard">
+		<link rel="stylesheet" href="/bootstrap.css">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<script src="/jquery.min.js"></script>
+		
+		<title>Mongoose Dashboard</title>
+		<style>
+			.container { width: 970px; margin: 40px auto; }
+            table {margin: 20px; }
+            td { height: 30px; width: 130px; padding: 10px 20px;  }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Edit Doggo</h1>
+
+			<% if (dog) { %>
+				<form method="post" action="/dogs/<%= dog._id %>">
+					<table>
+						<tr>
+							<td>Name:</td>
+							<td><input type="text" name="name" value="<%= dog.name %>"></td>
+						</tr>
+						<tr>
+							<td>Age (years):</td>
+							<td><input type="text" name="age" value="<%= dog.age %>"></td>
+						</tr>
+						<tr>
+							<td>Good Boy?</td>
+							<td>
+								<input type="radio" name="good_boy" value="yes" <% if(dog.good_boy) { %>checked<% } %>>Yes
+								<input type="radio" name="good_boy" value="no" <% if (!dog.good_boy) { %>checked<% } %>>No
+							</td>
+						</tr>
+					</table>
+					<p><input type="submit" value="Submit"></p>
+
+				</form>
+
+			<% } %>
+			
+			<p><a href="/">Back</a></p>
+
+
+
+
+		</div>
+	</body>
+</html>

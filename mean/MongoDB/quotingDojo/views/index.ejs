@@ -1,0 +1,67 @@
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="johnahnz0rs > coding dojo > mean > express.js > Quoting Dojo">
+		<link rel="stylesheet" href="bootstrap.css">
+		<link rel="shortcut icon" href="favicon.ico">
+		<script src="jquery.min.js"></script>
+		
+		<title>Quoting Dojo</title>
+		<style>
+			.container { margin: 40px auto; }
+			#form_div { width: 600px; margin: 0px auto !important; border: 3px solid blue; border-radius: 30px; padding: 20px;}
+			#add_quote { background-color: green; color: white; border-radius: 5px; padding: 20px 10px; display: inline; }
+			#show_quotes { background-color: blue; color: white; border-radius: 5px; padding: 20px 10px; margin-left: 40px; display: inline; }
+			.form-row { margin: 20px 10px !important;  }
+			input {display: inline-block !important;}
+			form {display: inline-block;}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+
+			<div id="form_div" class="form-group align-items-center">
+				<form method="post" action="/quotes">
+					<h1 class="text-center">Welcome to Quoting Dojo</h1>
+
+					<div class="form-row align-items-center">
+						<div class="col-3">
+							<label for="name">Your Name:</label>
+						</div>
+						<div class="col">
+							<input type="text" class="form-control" name="name">
+						</div>
+					</div>
+
+					<div class="form-row">
+						<div class="col-3">
+							<label for="quote">Your Quote:</label>
+						</div>
+						<div class="col">
+							<textarea class="form-control" name="quote" rows="5"></textarea>
+							
+						</div>
+					</div>
+
+					<div class="form-row">
+						<div class="col-3">
+							&nbsp;
+						</div>
+						<div class="col">
+							<input type="submit" value="Add my quote!" id="add_quote">
+							</form>
+							<form method="get" action="/quotes">
+								<input type="submit" value="Skip to quotes!" id="show_quotes">
+							</form>
+						</div>
+					</div>
+			</div> <!-- end #form_div -->
+			
+
+
+
+
+		</div>
+	</body>
+</html>

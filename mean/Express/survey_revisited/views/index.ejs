@@ -1,0 +1,116 @@
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="johnahnz0rs > coding dojo > mean > express.js > survey form">
+		<link rel="stylesheet" href="bootstrap.css">
+		<link rel="shortcut icon" href="favicon.ico">
+		<script src="jquery.min.js"></script>
+		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+		<title>Survey Form: Revisited</title>
+		<style>
+			.lol { width: 500px; height: 400px; margin: 50px auto; border: 1px solid black; padding: 20px;}
+			.server_response { width: 500px; padding: 20px auto; margin: 20px auto; border: 1px solid black; text-align: center; background-color: lightgreen;}
+			.server_response p { padding: 20px auto; }
+			.left-col { width: 170px;}
+			.right-col { width: 250px; }
+			.table th, .table td { 
+			    border-top: none !important; 
+			}
+		</style>
+
+		<script>
+			$(document).ready(function() {
+				$('.server_response').hide();
+
+				var socket = io.connect();
+				console.log('johnahnz0rs is connected');
+
+				$('button').click(function() {
+					console.log('w00t');
+					socket.emit('posting_form', {form_data: $('form').serializeArray()
+					});
+					$('.server_response').show();
+					return false;
+				});
+
+
+				socket.on('updated_message', function(data) {
+					// console.log(data.updated_message);
+					$('.server_response').empty();
+					$('.server_response').append(`<br><p>${data.updated_message}</p>`);
+				});
+				
+				socket.on('random_number', function(data) {
+					// console.log('lol random');
+					$('.server_response').append(`<p>Your lucky number emitted by the server is ${data.random_number}</p>`);
+
+					// console.log(data.random_number);
+				});
+
+
+
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class='server_response'>
+
+			</div>
+
+			<div class='table-responsive lol'>
+				<form>
+					<table class='table'>
+						<tr>
+							<td class='left-col'>Your Name:</td>
+							<td><input type='text' name='name' class='right-col' autocomplete="off"></td>
+						</tr>
+						<tr>
+							<td class='left-col'>Dojo Location:</td>
+							<td>
+								<select name='dojo' class='right-col'>
+									<option selected value='Remote Online'>Remote Online</option>
+									<option value='Burbank'>Burbank</option>
+									<option value='Seattle'>Seattle</option>
+									<option value='Your Butt'>Your Butt</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class='left-col'>Favorite Language:</td>
+							<td>
+								<select name='language' class='right-col'>
+									<option value='JavaScript' selected>JavaScript</option>
+									<option value='HTML/CSS'>HTML/CSS</option>
+									<option value='Python'>Python</option>
+									<option value='Klingon'>Klingon</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td colspan='2'>
+								Comment (optional)<br>
+								<textarea name='comment' rows='3' cols='50' autocomplete="off"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td colspan='2'>
+								<!-- <input type='submit' value='Submit' class='float-right'> -->
+								<button>Submit</button>
+							</td>
+						</tr>
+					</table>
+
+				</form>
+			</div>
+
+
+
+
+
+
+		</div>
+		
+	</body>
+</html>

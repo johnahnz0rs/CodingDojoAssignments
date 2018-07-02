@@ -1,0 +1,13 @@
+<div class="container">
+
+    <h1>Retro Barcode Generator</h1>
+
+    <div class="div-barcode"
+        *ngFor="let color of barcode"
+        [ngStyle]="{'background-color': color, 'display': 'inline-block'}">
+    </div>
+
+    <div class="event-bind">
+        <button (click)="onButtonClick($event)">Click me!</button>
+    </div>
+</div>

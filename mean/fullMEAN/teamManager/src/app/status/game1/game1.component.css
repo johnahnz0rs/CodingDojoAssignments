@@ -1,0 +1,62 @@
+.games {
+    border: 1px solid black;
+    margin: 20px;
+    padding: 30px;
+    background-color: white;
+}
+
+.game-links-div {
+    margin: 0 auto;
+    width: 50%;
+}
+
+/*.game-link {*/
+    /*display: inline-block;*/
+    /*vertical-align: top;*/
+    /*margin: 0 auto;*/
+/*}*/
+
+
+.inlineList {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.game-link {
+    padding: 10px;
+    border-right: 1px solid #000000;
+    text-align: center;
+}
+
+.game-link-right {
+    padding: 10px;
+    text-align: center;
+}
+
+
+.status-button {
+    border: 1px solid black;
+    margin-right: 20px;
+    padding: 2px 30px;
+}
+
+.playing {
+    background-color: green;
+    color: white;
+}
+
+.not-playing {
+    background-color: red;
+    color: white;
+}
+
+.undecided {
+    background-color: yellow;
+    color: black;
+}

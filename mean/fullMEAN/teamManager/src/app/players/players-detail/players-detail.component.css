@@ -1,0 +1,23 @@
+.player-detail {
+  border: 1px solid black;
+  margin: 0 30px;
+  padding: 30px;
+  background-color: white;
+}
+
+.table > tbody > tr > td {
+  border-top: none;
+}
+
+.green {
+  background-color: green;
+    color: white;
+}
+.red {
+  background-color: red;
+    color: white;
+}
+.yellow {
+  background-color: yellow;
+    color: black;
+}

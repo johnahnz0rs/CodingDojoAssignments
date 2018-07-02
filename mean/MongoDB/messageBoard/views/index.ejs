@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="johnahnz0rs > coding dojo > mean > express.js > Message Board">
+		<link rel="stylesheet" href="/bootstrap.css">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<script src="/jquery.min.js"></script>
+		
+		<title>Message Board</title>
+		<style>
+			.container { width: 970px; margin: 40px auto; }
+			#post_message { margin: 20px auto 40px auto; }
+			.pull-right { float: right !important; }
+			.textarea { width: 100%; }
+			.input { width: 50%; }
+			.display_messages { width: 90%; margin: 20px auto;}
+			.display_comments { width: 90%; margin: 20px auto; }
+			.post_comment { width: 100%; margin: 20px auto; }
+			.red_font { color: red; }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>The Dojo Message Board</h1>
+			<hr>
+
+			<div id="post_message">
+				<form action="/message" method="post">
+					<p>
+						Name:
+						<br><input type="text" name="name" class="input">
+					</p>
+					<p>
+						Message:
+						<br><textarea name="message" rows="3" class="textarea"></textarea>
+					</p>
+					<p>
+						<input type="submit" value="Post message" class="pull-right">
+				</form>
+				<% if (typeof(errors) !== 'undefined') { %>
+					<% for (const key in errors) { %>
+						<h4 class='red_font'><%= errors[key].message %></h4>
+					<% } %>
+				<% } else { %>
+			</div> <!-- end #post_message -->
+
+					<% for (const message of messages) { %>
+							<div class="display_messages pull-right">
+								<h4>Name: <%= message.name %></h4>
+								<h4>Message: <%= message.message %></h4>
+								<!-- Message id: <%= message._id %> -->
+
+								<div class="display_comments">
+									<% for (const comment of message._comments) { %>
+										<p>
+											Name: <%= comment.name %>
+											<br>Comment: <%= comment.comment %>
+										</p>
+
+									<% } %>
+								
+							
+
+									<div class="post_comment pull-right">
+										<form action="/comment" method="post">
+											<input type="hidden" name="id" value="<%= message._id %>">
+											
+											<p>
+												Name:
+												<br><input type="text" name="name" class="input">
+											</p>
+											<p>
+												Comment:
+												<br><textarea name="comment" rows="3" class="textarea"></textarea>
+											</p>
+											<p>
+												<input type="submit" value="Post comment" class="pull-right">
+											</p>
+										</form>
+									</div> <!-- end .post_comment -->
+								</div> <!-- end .display_comments -->
+							</div> <!-- end .display_messages -->
+						
+					<% } %> <!-- end for (messages) -->
+				<% } %> <!-- end else -->
+		</div>
+	</body>
+</html>

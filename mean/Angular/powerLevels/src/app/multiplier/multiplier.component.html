@@ -1,0 +1,32 @@
+<fieldset>
+    <legend>Human</legend>
+    <p>Power Level: {{ allPowerLevels[0].power }}</p>
+</fieldset>
+
+<fieldset>
+    <legend>Saiyan</legend>
+    <p>Power Level: {{ allPowerLevels[1].power }}</p>
+</fieldset>
+
+<fieldset>
+    <legend>Super Saiyan</legend>
+    <p>Power Level: {{ allPowerLevels[2].power }}</p>
+</fieldset>
+
+<fieldset>
+    <legend>Super Saiyan Two</legend>
+    <p>Power Level: {{ allPowerLevels[3].power }}</p>
+    <h3 *ngIf="allPowerLevels[3].message">Over 9000!</h3>
+</fieldset>
+
+<fieldset>
+    <legend>Super Saiyan Three</legend>
+    <p>Power Level: {{ allPowerLevels[4].power }}</p>
+    <h3 *ngIf="allPowerLevels[4].message">Superlative!</h3>
+</fieldset>
+
+<fieldset>
+    <legend>Super Saiyan Four</legend>
+    <p>Power Level: {{ allPowerLevels[5].power }}</p>
+    <h3 *ngIf="allPowerLevels[5].message">The One</h3>
+</fieldset>

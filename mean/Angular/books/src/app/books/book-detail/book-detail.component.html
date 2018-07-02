@@ -1,0 +1,16 @@
+<section class="scheduler-border" id="book-detail">
+
+    <div *ngIf="errorMessage">
+        <p class="red">{{ errorMessage }}</p>
+    </div>
+
+    <fieldset>
+        <legend>Selected Book</legend>
+        <p>ID: {{ book?._id }}</p>
+        <p>Title: {{ book?.title }}</p>
+        <p>Author: {{ book?.author }}</p>
+        <p>Year: {{ book?.year }}</p>
+        <p>Page Count: {{ book?.pages }}</p>
+        <p>Publisher: {{ book?.publisher }}</p>
+    </fieldset>
+</section>

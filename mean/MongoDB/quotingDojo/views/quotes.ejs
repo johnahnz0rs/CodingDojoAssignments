@@ -1,0 +1,27 @@
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="johnahnz0rs > coding dojo > mean > express.js > Quoting Dojo">
+		<link rel="stylesheet" href="bootstrap.css">
+		<link rel="shortcut icon" href="favicon.ico">
+		<script src="jquery.min.js"></script>
+		<title>Quoting Dojo: Quotes</title>
+		<style>
+			.container { margin: 40px auto; }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+
+			<% for (const quote of quotes) { %>
+				<h3>Author: <%= quote.name %></h3>
+				<p>Quote: "<%= quote.quote %>"</p>
+				<p>Timestamp: <%= quote.created_at %></p>
+			<% } %>
+
+
+
+		</div>
+	</body>
+</html>

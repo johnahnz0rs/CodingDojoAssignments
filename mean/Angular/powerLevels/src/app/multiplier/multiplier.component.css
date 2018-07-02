@@ -1,0 +1,12 @@
+fieldset {
+    display: inline-block;
+    vertical-align: top;
+    height: 150px;
+    width: 280px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+.header {
+    text-decoration: underline;
+}
